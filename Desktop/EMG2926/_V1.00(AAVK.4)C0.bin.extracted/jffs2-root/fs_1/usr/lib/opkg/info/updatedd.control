@@ -1,0 +1,13 @@
+Package: updatedd
+Version: 2.6-7
+Depends: libc
+Source: feeds/packages/net/updatedd
+SourceFile: updatedd_2.6.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 5600
+Description:  Updatedd is a small tool that will update one of many dynamic 
+ dns services on boot. 
+ Please look at the /etc/init.d/ddns script for more info. 
+ 

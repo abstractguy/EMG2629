@@ -1,0 +1,6 @@
+/etc/samba/smbpasswd
+/etc/samba/smb.conf.template
+/etc/init.d/samba
+/lib/upgrade/keep.d/samba3
+/usr/sbin/smbpasswd
+/usr/sbin/smbd

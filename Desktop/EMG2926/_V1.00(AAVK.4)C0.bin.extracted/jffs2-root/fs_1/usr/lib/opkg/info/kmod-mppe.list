@@ -1,0 +1,2 @@
+/etc/modules.d/31-mppe
+/lib/modules/3.3.8/ppp_mppe.ko

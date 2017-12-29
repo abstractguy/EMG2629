@@ -1,0 +1,11 @@
+Package: macchanger
+Version: 1.5.0-1
+Depends: libc
+Source: package/macchanger
+SourceFile: macchanger-1.5.0.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: utils
+Architecture: ar71xx
+Installed-Size: 80344
+Description:  This is a GNU/Linux utility for viewing/manipulating the MAC address 
+ of network interfaces.

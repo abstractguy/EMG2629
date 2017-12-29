@@ -1,0 +1,11 @@
+Package: libcyassl
+Version: 1.6.5-2
+Depends: libc
+Source: package/libs/cyassl
+SourceFile: cyassl-1.6.5.zip
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 65276
+Description:  CyaSSL is an SSL library optimized for small footprint, both on disk and for
+ memory use.

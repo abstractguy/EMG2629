@@ -1,0 +1,15 @@
+Package: busybox
+Version: 1.19.4-5
+Depends: libc
+Source: package/busybox
+SourceFile: busybox-1.19.4.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: GPLv2 BSD-4c
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Section: base
+Essential: yes
+Maintainer: Nicolas Thill <nico@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 256192
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.

@@ -1,0 +1,10 @@
+Package: sysdiagd
+Version: 1.0-beta-1
+Depends: libc
+Source: package/private/zyxel/sysdiagd
+Section: base
+Architecture: ar71xx
+Installed-Size: 2997
+Description:  sysdiagd is a trivial replacement of some of the UDev functionality
+ in a tiny pack, intended for Linux early userspace: Init RAM FS and InitRD.
+ This is an implementation of sysdiagd-1.0-beta

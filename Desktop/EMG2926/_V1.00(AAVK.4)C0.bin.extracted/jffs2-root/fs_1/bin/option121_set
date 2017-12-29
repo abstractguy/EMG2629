@@ -1,0 +1,19 @@
+#!/bin/sh
+
+local iface=$1
+local ip
+local gw
+
+shift
+sleep 2
+
+while test $# -gt 0
+do
+	if [ "$1" != "" ] ;then
+		ip=$(echo $1 | tr -d 'staticroutes=')
+		gw=$2
+		ip route add $ip via $gw  dev $iface table 1
+	fi
+	shift
+	shift
+done

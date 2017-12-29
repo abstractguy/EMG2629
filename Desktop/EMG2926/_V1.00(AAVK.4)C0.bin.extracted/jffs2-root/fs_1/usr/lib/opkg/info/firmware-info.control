@@ -1,0 +1,10 @@
+Package: firmware-info
+Version: 0.2-1
+Depends: libc
+Source: package/private/zyxel/firmware-info
+SourceFile: firmware-info-0.2.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: net
+Architecture: ar71xx
+Installed-Size: 2475
+Description:  This is a firmware-info package

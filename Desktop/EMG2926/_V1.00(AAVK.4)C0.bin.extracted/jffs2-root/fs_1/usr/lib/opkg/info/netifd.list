@@ -1,0 +1,10 @@
+/lib/netifd/proto/dhcp.sh
+/lib/netifd/netifd-proto.sh
+/sbin/ifdown
+/lib/netifd/dhcp.script
+/usr/share/udhcpc/default.script
+/lib/network/config.sh
+/sbin/netifd
+/sbin/devstatus
+/sbin/ifstatus
+/sbin/ifup

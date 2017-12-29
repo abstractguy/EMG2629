@@ -1,0 +1,10 @@
+Package: usbutils
+Version: 003-1
+Depends: libc, libusb-1.0, zlib, librt, libpthread
+Source: package/usbutils
+SourceFile: usbutils-003.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: utils
+Architecture: ar71xx
+Installed-Size: 185307
+Description:  USB devices listing utilities

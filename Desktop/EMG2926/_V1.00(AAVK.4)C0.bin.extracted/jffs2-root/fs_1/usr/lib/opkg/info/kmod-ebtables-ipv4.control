@@ -1,0 +1,11 @@
+Package: kmod-ebtables-ipv4
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ebtables
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 5927
+Description:  This option adds the IPv4 support to ebtables, which allows basic
+ IPv4 header field filtering, ARP filtering as well as SNAT, DNAT targets.

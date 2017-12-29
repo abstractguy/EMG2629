@@ -1,0 +1,4 @@
+/lib/modules/3.3.8/cryptomgr.ko
+/lib/modules/3.3.8/crypto_blkcipher.ko
+/etc/modules.d/03-crypto-manager
+/lib/modules/3.3.8/aead.ko

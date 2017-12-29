@@ -1,0 +1,14 @@
+Package: iptables-mod-iprange
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-iprange
+Source: package/network/utils/iptables
+SourceFile: iptables-1.4.10.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 3036
+Description:  iptables extensions for matching ip ranges.
+ 
+ Matches:
+ - iprange
+ 

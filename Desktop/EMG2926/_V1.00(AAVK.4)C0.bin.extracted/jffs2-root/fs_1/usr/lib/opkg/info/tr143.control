@@ -1,0 +1,8 @@
+Package: tr143
+Version: 0.1
+Depends: libc
+Source: package/private/zyxel/tr143
+Section: net
+Architecture: ar71xx
+Installed-Size: 6030
+Description:  Support Super WAN Management

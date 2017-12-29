@@ -1,0 +1,10 @@
+Package: kmod-mppe
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ppp, kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-sha1, kmod-crypto-ecb
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 4355
+Description:  Kernel modules for Microsoft PPP compression/encryption

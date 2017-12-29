@@ -1,0 +1,135 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2007 OpenWrt.org
+. /etc/functions.sh
+include /lib/config
+include /lib/network
+scan_interfaces
+
+START=49
+
+## WenHsien-EMG2926-2013.1231: In order to set default router normally.
+echo 2 > /proc/sys/net/ipv6/conf/eth0/accept_ra
+## WenHsien-EMG2926-2013.1231: In order to let more than two device with the same MACs could work fine on a link.
+## WenHsien-EMG2926-2014.0627: Must Open DAD Then CD-Router "autoconf" Could Pass.
+#echo 0 > /proc/sys/net/ipv6/conf/eth0/dad_transmits
+
+boot() {
+    wanface=$(uci get dhcp6c.basic.interface)
+
+    # This shell script is IPv6 only
+    IsIpv6=$(uci get network.$wanface.ipv6)
+    if [ -z "$IsIpv6" -o "$IsIpv6" == "0" ];then
+        return
+    fi
+    
+    # This shell script used for these IP modes (v6): static, dhcp, and pppoe.
+#    v6_proto=$(uci get network.$wanface.v6_proto)
+#    if [ $v6_proto != "static" -a $v6_proto != "dhcp" -a $v6_proto != "pppoe" ]; then
+#        return
+#    fi
+
+    v6_proto=$(uci get network.$wanface.v6_proto)
+    ifname=$(uci get network.$wanface.ifname) 
+    ip6addr=$(uci get network.$wanface.ip6addr)
+    prefixlen=$(uci get network.$wanface.prefixlen)
+    gateway6=$(uci get network.$wanface.ip6gw)
+
+    if [ "$v6_proto" == "static" ];then
+
+        ip6addr="$ip6addr/$prefixlen"
+        ifconfig $ifname add "$ip6addr"
+		
+        ip -6 route del default dev $ifname                                          
+        #ip -6 route add default via $gateway  
+		
+        route -A inet6 add default gw "$gateway6"                 
+    fi	
+}
+
+stop() { 
+	return 0	
+}
+
+
+start() {
+    wanface=$(uci get dhcp6c.basic.interface)
+
+    ## This shell script is IPv6 only
+    IsIpv6=$(uci get network.$wanface.ipv6)
+    if [ -z "$IsIpv6" -o "$IsIpv6" == "0" ];then
+        return
+    fi
+
+#    v6_proto=$(uci get network.$wanface.v6_proto)
+    ## WenHsien-EMG2926, cause RA_dhcp6c.sh is listed into network.sh affect-list in ucitrack.
+    ## All protocols flows except "static", "dhcp" and "pppoe" should NOT go into RA_dhcp6c.sh .
+#    if [ $v6_proto != "static" -a $v6_proto != "dhcp" -a $v6_proto != "pppoe" ]; then
+#        return
+#    fi
+
+    dual=$(uci get network.$wanface.IP_version)
+    ## WenHsien-EMG2926: "IPv4_Only" flows should NOT go into RA_dhcp6c.sh .
+    if [ -n "$dual" -a "$dual" = "IPv4_Only" ]; then
+        return
+    fi
+
+    ifname=$(uci get network.$wanface.ifname) 
+    if [ -n "$dual" -a "$dual" = "IPv6_Only" ]; then
+   	   	uci set network.$wanface.proto="none"
+   	   	uci commit network
+   	   	stop_interface_all "$wanface"
+   	   	## WenHsien-EMG2926: Do NOT modify IPv4 config.s when go through IPv6 flow.
+   	   	#ifconfig $ifname add 0.0.0.0
+   	   	#ifconfig pppoe-$wanface add 0.0.0.0 
+    fi
+
+   	ip6addr=$(uci get network.$wanface.ip6addr)
+   	prefixlen=$(uci get network.$wanface.prefixlen)
+   	gateway6=$(uci get network.$wanface.ip6gw)
+   	v6staticdns=$(uci get network.$wanface.IPv6_dns)
+
+	ip -6 addr del $(ifconfig $ifname | awk '/Scope:Global/{print $3}' | awk NR==1) dev $ifname
+	ip -6 addr del $(ifconfig $ifname | awk '/Scope:Global/{print $3}' | awk NR==2) dev $ifname
+	ip -6 addr del $(ifconfig pppoe-$wanface | awk '/Scope:Global/{print $3}' | awk NR==1) dev $ifname
+	ip -6 addr del $(ifconfig pppoe-$wanface | awk '/Scope:Global/{print $3}' | awk NR==2) dev $ifname
+
+	## Main flow
+    config_load "dhcp6c"
+    local gui_run
+    config_get gui_run basic gui_run
+	v6_proto=$(uci get network.$wanface.v6_proto)
+    if [ "$v6_proto" != "static" ];then
+        ifconfig $ifname del $ip6addr/$prefixlen
+        if [ "$gui_run" == "1" ];then
+           uci set dhcp6c.basic.restart=1
+           uci commit dhcp6c
+           /etc/init.d/dhcp6c restart
+           uci set dhcp6c.basic.gui_run=0
+           uci set dhcp6c.basic.restart=0
+           uci commit dhcp6c
+        fi
+    else
+        #ip6addr="$ip6addr/$prefixlen"
+        ip -6 addr add $ip6addr/$prefixlen dev $ifname
+		
+        ip -6 route del default dev $ifname
+		
+        ip -6 route add default via $gateway6
+        #route -A inet6 add default gw "$gateway" 
+		
+        #ifconfig $ifname add 0.0.0.0
+        #ifconfig pppoe-$wanface add 0.0.0.0
+    fi	
+		
+    ## WenHsien-EMG2926-2014.0107: for DHCPv6 Default Router (DR) setting.
+    ##    SAVE current  DR when: network.sh start() First-Line.
+    ##    LOAD previous DR when: RA_dhcp6c.sh start() Last-Line, and 
+    ##                           route.sh boot() Last-Line.
+    ##    related UCI CONF     : network.wan.dhcpv6gw
+    ##  DHCPv6 only
+    #if [ "$v6_proto" == "dhcp" ];then
+    #    dhcpv6gw=$(uci get network.$wanface.dhcpv6gw)
+    #    ifname=$(uci get network.$wanface.ifname)
+    #    ip -6 route add default via $dhcpv6gw dev $ifname
+    #fi
+}

@@ -1,0 +1,12 @@
+config tr069 main
+	option	tr69cInform		'0'
+	option	tr69cInformInterval	'60'
+	option	tr69cInformSource	'1'
+	option	tr69cAcsURL	''
+	option	tr69cAcsUser	''
+	option	tr69cAcsPwd	''
+	option	tr69cConnReqPort	''
+	option	tr69cConnReqUser	''
+	option	tr69cConnReqPwd	''
+	option	tr69cInterface	'wan'
+

@@ -1,0 +1,10 @@
+Package: zlib
+Version: 1.2.3-5
+Depends: libc
+Source: package/libs/zlib
+SourceFile: zlib-1.2.3.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 35674
+Description:  Library implementing the deflate compression method

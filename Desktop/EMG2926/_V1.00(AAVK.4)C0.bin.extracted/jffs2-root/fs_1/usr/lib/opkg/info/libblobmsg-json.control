@@ -1,0 +1,12 @@
+Package: libblobmsg-json
+Version: 2012-12-18-4d0a00c82c77a9395c992841237e2c06c4606a5e
+Depends: libc, libjson, libubox
+Source: package/libs/libubox
+SourceFile: libubox-2012-12-18-4d0a00c82c77a9395c992841237e2c06c4606a5e.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: GPLv2
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 3306
+Description:  blobmsg <-> json conversion library

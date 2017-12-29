@@ -1,0 +1,13 @@
+Package: libnl-bf
+Version: g7d47666eb3c414feb8901970d35b96461214c2bf-3
+Depends: libc, libpthread
+Provides: libnl
+Source: qca/feeds/streamboost/libnl-bf
+SourceFile: libnl-bf-g7d47666eb3c414feb8901970d35b96461214c2bf.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: Bigfoot
+Maintainer: Ryan Nowakowski <rnowakow@qca.qualcomm.com>
+Architecture: ar71xx
+Installed-Size: 151790
+Description:  This package contains a library for applications dealing with netlink sockets.
+ The standard libnl has been modified to suit Bigfoot purposes.

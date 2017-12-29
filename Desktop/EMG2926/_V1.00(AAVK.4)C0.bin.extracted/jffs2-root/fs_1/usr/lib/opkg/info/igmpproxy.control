@@ -1,0 +1,11 @@
+Package: igmpproxy
+Version: 0.1-2
+Depends: libc
+Source: feeds/packages/net/igmpproxy
+SourceFile: igmpproxy-0.1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 15983
+Description:  IGMPproxy is a simple dynamic Multicast Routing Daemon using
+ only IGMP signalling (Internet Group Management Protocol).

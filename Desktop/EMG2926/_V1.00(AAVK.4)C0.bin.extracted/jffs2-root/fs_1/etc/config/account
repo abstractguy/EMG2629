@@ -1,0 +1,15 @@
+#privilege 1 > 2
+config general general
+	option defaultName root
+	option maxNumber 5
+
+config account supervisor
+	option username supervisor
+	option password supervisor
+	option privilege 1
+
+config account admin
+	option username admin
+	option password 1234
+	option privilege 2
+

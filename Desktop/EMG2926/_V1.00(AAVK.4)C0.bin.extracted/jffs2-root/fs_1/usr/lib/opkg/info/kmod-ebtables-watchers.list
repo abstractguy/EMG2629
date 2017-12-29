@@ -1,0 +1,4 @@
+/lib/modules/3.3.8/ebt_log.ko
+/lib/modules/3.3.8/ebt_ulog.ko
+/etc/modules.d/49-ebtables-watchers
+/lib/modules/3.3.8/ebt_nflog.ko

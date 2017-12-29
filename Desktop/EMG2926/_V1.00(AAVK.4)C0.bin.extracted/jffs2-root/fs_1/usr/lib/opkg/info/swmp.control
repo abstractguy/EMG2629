@@ -1,0 +1,8 @@
+Package: swmp
+Version: 1
+Depends: libc, libjson
+Source: package/private/zyxel/swmp
+Section: net
+Architecture: ar71xx
+Installed-Size: 170657
+Description:  Support Super WAN Management

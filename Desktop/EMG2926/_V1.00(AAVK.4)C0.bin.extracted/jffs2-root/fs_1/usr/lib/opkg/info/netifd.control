@@ -1,0 +1,12 @@
+Package: netifd
+Version: 2012-12-17.1-HEAD
+Depends: libc, libuci, libnl-tiny, libubus, ubus, ubusd, jshn
+Source: package/network/config/netifd
+SourceFile: netifd-2012-12-17.1-2eca28705a27ab37ee902308af2c134c64c95e61.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: GPLv2
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 40164
+Description:  OpenWrt Network Interface Configuration Daemon

@@ -1,0 +1,10 @@
+Package: inadyn
+Version: 1.96.2-1
+Depends: libc
+Source: package/network/services/inadyn
+SourceFile: inadyn-1.96.2.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 11452
+Description:  INADYN is a free DynDNS client.

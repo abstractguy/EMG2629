@@ -1,0 +1,12 @@
+Package: kmod-qca-wifi-perf
+Version: 3.3.8+10.2.4-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), libgcc, libc, wireless-tools, librt
+Provides: kmod-qca-wifi
+Source: package/private/qualcomm/qca-wifi
+SourceFile: qca-wifi-10.2.4-tag-2.9.095.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ar71xx
+Installed-Size: 2605812
+Description:  QCA Wireless LAN Driver

@@ -1,0 +1,10 @@
+Package: chksum-tool
+Version: 0.1-1
+Depends: libc
+Source: package/private/zyxel/chksum-tool
+SourceFile: chksum-tool-0.1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: net
+Architecture: ar71xx
+Installed-Size: 1727
+Description:  This is a chechsum tool

@@ -1,0 +1,10 @@
+Package: kmod-fast-classifier
+Version: 3.3.8+g-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-shortcut-fe
+Provides: fast-classifier
+Source: package/private/qualcomm/shortcut-fe/fast-classifier
+SourceFile: fast-classifier-g.tar.gz
+Section: kernel
+Architecture: ar71xx
+Installed-Size: 7711
+Description:  FAST Classifier talks to SFE to make decisions about offloading connections

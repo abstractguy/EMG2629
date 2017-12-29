@@ -1,0 +1,12 @@
+Package: ubus
+Version: 2012-12-15-bb856ad8a9a1e786494d01e34bbfe2b4d2134021
+Depends: libc, libubus, libblobmsg-json, ubusd
+Source: package/ubus
+SourceFile: ubus-2012-12-15-bb856ad8a9a1e786494d01e34bbfe2b4d2134021.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: LGPLv2.1
+Section: luci2
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 3422
+Description:  OpenWrt RPC client utility

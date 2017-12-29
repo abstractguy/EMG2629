@@ -1,0 +1,50 @@
+#!/bin/sh /etc/rc.common 
+# Copyright (C) 2014 ZyXEL  
+
+START=99
+
+boot(){
+	exit 0
+}
+
+start(){
+	rm /tmp/tr143info
+	
+	kill -9 `ps | grep "watch -tn 2 /bin/link_monitor" | grep "grep" -v | awk '{print $1}'`
+	
+	blockWAN=$(uci get tr143.general.blockWAN)
+	[ "$blockWAN" == "1" ] && iptables -I FORWARD -j DROP
+		
+	port=$(uci get tr143.general.port)
+	downloadoutputfile=$(uci get tr143.general.downloadfile)
+	uploadfile=$(uci get tr143.general.uploadfile)
+	thread=$(uci get tr143.general.thread)
+	TransportDirection=$(uci get tr143.general.TransportDirection)
+	uploadlength=$(( $(uci get tr143.general.uploadlength) * 1048576 ))  ##Mbyte to byte
+
+	## download
+	[ "$TransportDirection" == "download" ] && {
+		host=$(uci get tr143.general.DownloadURL | awk -F '/' '{print $3}')
+		downloaduri=$(uci get tr143.general.DownloadURL | awk -F $host '{print $2}' )
+		HttpDiag -a $host -p $port -s down -u $downloaduri -o 30 -t $thread
+		echo "Latency:`ping $host -c 1 | grep time | awk -F '=' '{print $4}'`" >> /tmp/DownloadTR143info
+		#Send inform to ACS
+		echo 1 > /tmp/DiagEndSendInf
+		be_ctltr98 DownloadDiagnostics all
+	}
+	##upload
+	[ "$TransportDirection" == "upload" ] && {
+		host=$(uci get tr143.general.UploadURL | awk -F '/' '{print $3}')
+		HttpDiag -a $host -p $port -s up -l $uploadlength -o 30 -t $thread
+		echo "Latency:`ping $host -c 1 | grep time | awk -F '=' '{print $4}'`" >> /tmp/UploadTR143info
+		#Send inform to ACS
+		echo 1 > /tmp/DiagEndSendInf
+		be_ctltr98 UploadDiagnostics all
+	}
+	
+	rm -rf $downloadoutputfile
+
+	watch -tn 2 /bin/link_monitor 1>/dev/null 2>&1 &
+
+	[ "$blockWAN" == "1" ] && iptables -D FORWARD -j DROP
+}

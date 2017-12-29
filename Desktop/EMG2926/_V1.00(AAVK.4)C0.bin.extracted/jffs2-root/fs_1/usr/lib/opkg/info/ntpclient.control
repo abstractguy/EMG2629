@@ -1,0 +1,10 @@
+Package: ntpclient
+Version: 2007_365-4
+Depends: libc, librt
+Source: feeds/packages/net/ntpclient
+SourceFile: ntpclient_2007_365.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 12640
+Description:  NTP client for setting system time from NTP servers.

@@ -1,0 +1,10 @@
+Package: libexpat
+Version: 2.0.1-1
+Depends: libc
+Source: feeds/packages/libs/expat
+SourceFile: expat-2.0.1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 54515
+Description:  A fast, non-validating, stream-oriented XML parsing library.

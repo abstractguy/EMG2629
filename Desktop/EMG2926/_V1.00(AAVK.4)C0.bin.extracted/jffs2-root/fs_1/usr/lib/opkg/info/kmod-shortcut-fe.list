@@ -1,0 +1,2 @@
+/etc/modules.d/50-shortcut-fe
+/lib/modules/3.3.8/shortcut-fe.ko

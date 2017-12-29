@@ -1,0 +1,12 @@
+Package: libuci-lua
+Version: 2012-11-09.1-1
+Depends: libc, libuci, liblua
+Source: package/uci
+SourceFile: uci-2012-11-09.1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: LGPLv2.1 GPLv2
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 6305
+Description:  Lua plugin for UCI

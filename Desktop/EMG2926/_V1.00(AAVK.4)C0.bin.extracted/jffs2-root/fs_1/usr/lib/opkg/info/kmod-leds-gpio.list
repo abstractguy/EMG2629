@@ -1,0 +1,2 @@
+/etc/modules.d/60-leds-gpio
+/lib/modules/3.3.8/leds-gpio.ko

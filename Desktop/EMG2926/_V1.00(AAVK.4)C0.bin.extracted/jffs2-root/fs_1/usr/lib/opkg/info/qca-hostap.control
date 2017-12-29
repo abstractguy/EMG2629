@@ -1,0 +1,11 @@
+Package: qca-hostap
+Version: 10.2.4-1
+Depends: libc, kmod-qca-wifi
+Source: package/private/qualcomm/qca-hostap
+SourceFile: qca-hostap-10.2.4-tag-2.9.095.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ar71xx
+Installed-Size: 262655
+Description:  This package contains the IEEE 802.1x/WPA/EAP/RADIUS Authenticator.

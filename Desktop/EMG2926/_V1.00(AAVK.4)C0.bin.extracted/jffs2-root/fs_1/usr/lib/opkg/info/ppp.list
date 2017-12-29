@@ -1,0 +1,14 @@
+/usr/sbin/pppd
+/etc/ppp/ipv6-up
+/etc/ppp/filter
+/lib/netifd/ppp-up
+/etc/ppp/ip-down
+/etc/ppp/ip-up.d/10-dns
+/etc/ppp/ipv6-down
+/etc/ppp/ip-up
+/etc/ppp/options
+/etc/ppp/chap-secrets
+/lib/netifd/ppp-down
+/lib/netifd/proto/ppp.sh
+/etc/ppp/ip-up.d/11-nat
+/etc/ppp/resolv.conf

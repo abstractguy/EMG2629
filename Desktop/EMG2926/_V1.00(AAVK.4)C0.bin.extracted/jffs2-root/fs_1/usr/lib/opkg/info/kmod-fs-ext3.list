@@ -1,0 +1,4 @@
+/lib/modules/3.3.8/jbd.ko
+/lib/modules/3.3.8/ext3.ko
+/etc/modules-boot.d/31-fs-ext3
+/etc/modules.d/31-fs-ext3

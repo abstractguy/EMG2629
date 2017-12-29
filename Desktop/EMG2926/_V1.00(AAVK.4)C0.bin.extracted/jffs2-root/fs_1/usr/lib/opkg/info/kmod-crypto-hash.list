@@ -1,0 +1,3 @@
+/lib/modules/3.3.8/crypto_hash.ko
+/etc/modules.d/02-crypto-hash
+/etc/modules-boot.d/02-crypto-hash

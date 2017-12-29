@@ -1,0 +1,13 @@
+/lib/modules/3.3.8/cls_flow.ko
+/lib/modules/3.3.8/sch_fq_codel.ko
+/lib/modules/3.3.8/em_u32.ko
+/lib/modules/3.3.8/cls_route.ko
+/etc/modules.d/70-sched-core
+/lib/modules/3.3.8/sch_ingress.ko
+/lib/modules/3.3.8/act_skbedit.ko
+/lib/modules/3.3.8/cls_u32.ko
+/lib/modules/3.3.8/sch_hfsc.ko
+/lib/modules/3.3.8/act_mirred.ko
+/lib/modules/3.3.8/sch_codel.ko
+/lib/modules/3.3.8/cls_tcindex.ko
+/lib/modules/3.3.8/cls_fw.ko

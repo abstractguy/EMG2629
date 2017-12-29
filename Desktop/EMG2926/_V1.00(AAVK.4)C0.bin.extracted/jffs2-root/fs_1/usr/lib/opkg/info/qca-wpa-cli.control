@@ -1,0 +1,11 @@
+Package: qca-wpa-cli
+Version: 10.2.4-1
+Depends: libc
+Source: package/private/qualcomm/qca-hostap
+SourceFile: qca-hostap-10.2.4-tag-2.9.095.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ar71xx
+Installed-Size: 27858
+Description:  WPA Supplicant command line interface

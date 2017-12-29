@@ -1,0 +1,10 @@
+Package: libxml2
+Version: 2.7.8-1
+Depends: libc, libpthread, zlib
+Source: feeds/packages/libs/libxml2
+SourceFile: libxml2-2.7.8.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 493038
+Description:  A library for manipulating XML and HTML resources.

@@ -1,0 +1,5 @@
+/etc/init.d/gw6c
+/etc/config/gw6c
+/usr/sbin/gw6c_radvd
+/usr/share/gw6c/template/openwrt.sh
+/usr/sbin/gw6c

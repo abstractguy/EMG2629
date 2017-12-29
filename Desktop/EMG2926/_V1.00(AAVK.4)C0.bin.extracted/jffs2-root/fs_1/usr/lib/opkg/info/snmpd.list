@@ -1,0 +1,5 @@
+/etc/init.d/snmpd
+/etc/default/snmpd
+/etc/config/snmpd
+/usr/sbin/snmpd
+/etc/snmp/snmpd.conf

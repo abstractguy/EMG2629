@@ -1,0 +1,9 @@
+Package: RA_dhcp6c
+Version: 0.1-1
+Depends: libc
+Source: package/private/zyxel/RA_dhcp6c
+Section: net
+Architecture: ar71xx
+Installed-Size: 1539
+Description:  Read RA M bit and invoke DHCPv6 option, 
+ Added by Michael Lee.

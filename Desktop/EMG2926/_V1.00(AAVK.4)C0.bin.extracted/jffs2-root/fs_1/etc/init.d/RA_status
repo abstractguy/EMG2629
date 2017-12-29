@@ -1,0 +1,30 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2007 OpenWrt.org
+. /etc/functions.sh
+include /lib/config
+
+START=49
+
+boot() {
+	return 0
+}
+
+stop() { 
+	kill -9 $(cat /var/run/RA_status.pid) 
+	rm -f /var/run/RA_status.pid
+}
+
+
+start() {
+    ## This shell script is IPv6 only
+    wanface=$(uci get dhcp6c.basic.interface)
+    IsIpv6=$(uci get network.$wanface.ipv6)
+    if [ -z "$IsIpv6" -o "$IsIpv6" == "0" ];then
+        return
+    fi
+	
+	[ -e /var/run/RA_status.pid ] && return 0
+
+    /bin/RA_status &  
+}
+

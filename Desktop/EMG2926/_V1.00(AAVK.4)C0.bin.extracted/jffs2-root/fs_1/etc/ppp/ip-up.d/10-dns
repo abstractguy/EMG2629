@@ -1,0 +1,9 @@
+#!/bin/sh
+echo `date` "load ppp 3g-dns config"
+cat /tmp/resolv.conf.ppp > /tmp/resolv.conf.auto
+
+#/sbin/update_sys_dns
+
+/sbin/update_lan_dns
+/etc/init.d/dnsmasq stop
+/etc/init.d/dnsmasq start

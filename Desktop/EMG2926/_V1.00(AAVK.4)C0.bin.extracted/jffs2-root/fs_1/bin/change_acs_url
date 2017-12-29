@@ -1,0 +1,26 @@
+#!/bin/sh
+
+. /etc/functions.sh
+include /lib/config
+
+interface=$1
+acs_url=$2
+
+for i in "" 1 2 3 4
+do
+        dhcp43_enable=$(uci get network.wan$i.dhcp43)
+        wan_ifname=$(uci get network.wan$i.ifname)
+        dhcp60_enable=$(uci get network.wan$i.dhcp60)
+        tr069_ifname=$(uci get tr069.main.tr69cInterface)
+        tr069_ifname2=$(uci get network.$tr069_ifname.ifname)
+
+        if [ "$dhcp43_enable" == "1" ] && [ "$dhcp60_enable" == "1" ] && [ "$wan_ifname" == "$interface" ] && [ "$tr069_ifname2" == "$interface" ] ;then
+        
+                if [ "$acs_url" != "" ] ;then
+                        uci set tr069.main.tr69cAcsURL=$acs_url
+                        uci commitZcmd tr069
+                        /sbin/act_ztr69 &> /dev/null
+                fi
+        fi
+
+done

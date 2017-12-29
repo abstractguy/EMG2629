@@ -1,0 +1,8 @@
+Package: ckCgHdr
+Version: 1
+Depends: libc
+Source: package/private/zyxel/config-check
+Section: net
+Architecture: ar71xx
+Installed-Size: 2606
+Description:  Check Config Header

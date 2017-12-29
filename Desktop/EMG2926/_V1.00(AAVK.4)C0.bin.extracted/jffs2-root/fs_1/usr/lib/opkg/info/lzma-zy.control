@@ -1,0 +1,8 @@
+Package: lzma-zy
+Version: 1
+Depends: libc
+Source: package/zy-public/libs/lzma-zy
+Section: net
+Architecture: ar71xx
+Installed-Size: 51194
+Description:  ZyXEL Modify - support TR069

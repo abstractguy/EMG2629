@@ -1,0 +1,2226 @@
+Package: updatedd-mod-noip
+Version: 2.6-7
+Depends: libc, updatedd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: iptables-mod-chaos
+Version: 1.42-1
+Depends: libc, iptables, kmod-ipt-chaos
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: snmp-utils
+Version: 5.4.2.1-5
+Depends: libc, libnetsnmp
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-usb-storage
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-scsi-core, kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: terminfo
+Version: 5.7-5
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: kmod-sched-connmark
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-sched-core, kmod-ipt-core, kmod-ipt-conntrack-extra
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: libuci-lua
+Version: 2012-11-09.1-1
+Depends: libc, libuci, liblua
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: luci-theme-zyxel
+Version: 0.9+svn6252-1
+Depends: libc, luci-theme-base, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: gw6c
+Version: 5.1-1
+Depends: libc, libpthread, ip, kmod-tun, kmod-ipv6, uclibcxx, radvd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: kmod-lib-textsearch
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libc
+Version: 0.9.33.2-1
+Depends: libgcc
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: kmod-ebtables
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: ntpclient
+Version: 2007_365-4
+Depends: libc, librt
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/ntpclient b6ccfae9e5fb01de8e4ca11e4b066849
+Installed-Time: 1474560284
+
+Package: opkg
+Version: 618-5
+Depends: libc, zlib
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/opkg.conf 4a4c5f0a0d5f686a69b29db89c1a4ebb
+Installed-Time: 1474560285
+
+Package: iptables-mod-extra
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-extra
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: updatedd-mod-dyndns
+Version: 2.6-7
+Depends: libc, updatedd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: chksum-tool
+Version: 0.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+
+Package: kmod-usb-core
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nls-base
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: ip
+Version: 3.3.0-1
+Depends: libc, libnl-tiny
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/iproute2/rt_tables a1313318d6778fe6b8c680248ef5a463
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: luci-uci
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, libuci-lua
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: libpthread
+Version: 0.9.33.2-1
+Depends: libgcc
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: ubus
+Version: 2012-12-15-bb856ad8a9a1e786494d01e34bbfe2b4d2134021
+Depends: libc, libubus, libblobmsg-json, ubusd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: iw
+Version: 3.6-1
+Depends: libc, libnl-tiny
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-crypto-manager
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-hash, kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: wide-dhcpv6-relay
+Version: 20080615-6.3
+Depends: libc, kmod-ipv6
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: busybox
+Version: 1.19.4-5
+Depends: libc
+Provides:
+Status: install user installed
+Essential: yes
+Architecture: ar71xx
+Installed-Time: 1474560279
+
+Package: clinkc-zy
+Version: 1
+Depends: libc, expat, libopenssl
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+
+Package: proftpd
+Version: 1.3.4a-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/proftpd.conf 35514e14528648690716a55f03de7f2d
+Installed-Time: 1474560285
+
+Package: kmod-nfnetlink
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: inadyn
+Version: 1.96.2-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: wide-dhcpv6-server
+Version: 20080615-6.3
+Depends: libc, kmod-ipv6
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/dhcp6s 9ff958d80e6271b87004a95eab3089b8
+Installed-Time: 1474560286
+
+Package: kmod-crypto-hash
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kmod-tun
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libiwinfo-lua
+Version: 36
+Depends: libc, libiwinfo, liblua, lua
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: swconfig
+Version: 10
+Depends: libc, libuci, libnl-tiny
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: ebtables
+Version: 2.0.10-4-1
+Depends: libc, kmod-ebtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libiwinfo
+Version: 36
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: libcurl
+Version: 7.29.0-1
+Depends: libc, libopenssl, zlib
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+Auto-Installed: yes
+
+Package: openssl-util
+Version: 1.0.1g-1
+Depends: libc, libopenssl
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/ssl/openssl.cnf ce31ab5015842bf7c2939514a634e0e4
+Installed-Time: 1474560285
+
+Package: updatedd-mod-eurodyndns
+Version: 2.6-7
+Depends: libc, updatedd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-ipt-filter
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-lib-textsearch
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: kmod-lib-crc-ccitt
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ledtrig-usbdev
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: qca-wpa-supplicant
+Version: 10.2.4-1
+Depends: libc, kmod-qca-wifi
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-ipt-nat-extra
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-nat
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: libgcrypt
+Version: 1.4.5-1
+Depends: libc, libgpg-error
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: qca-hostap
+Version: 10.2.4-1
+Depends: libc, kmod-qca-wifi
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-gre
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipv6
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: libnetfilter-queue
+Version: 1.0.0-1
+Depends: libc, libnfnetlink, kmod-nfnetlink-queue
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: kmod-pppoe
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ppp, kmod-pppox
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: luci-nixio
+Version: 0.9+svn6252-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: ztr69cmd
+Version: 1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560286
+
+Package: kmod-pppox
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ppp
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: wlan-gen-psk
+Version: 0.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560286
+
+Package: kmod-ipt-conntrack
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: samba3
+Version: 3.0.37-5
+Depends: libc, libpthread, libpopt, samba-nmbd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/samba/smb.conf.template a7de2fed020152fbf8dab512f63d4e7f
+Installed-Time: 1474560285
+Auto-Installed: yes
+
+Package: base-files
+Version: 123-r7959
+Depends: libc, netifd, procd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/hosts ff16b417b71c75e2939632148b35cb67
+ /etc/inittab c16e43b34152eebd2ac65a7bee212dc7
+ /etc/group 4a116d818b2f49e14939d581ec786de1
+ /etc/passwd 8a31e6d3e2d67fc7b99f56055e9d802b
+ /etc/shadow 497b070fd6e487f137756e9bce95b636
+ /etc/profile 2729e95cc09e5f2a7ab9daae3d7ba857
+ /etc/shells 725ba6f40dff0612f61ecd3f171bb3e1
+ /etc/sysctl.conf 2db2863bc2bc698abf2a348005b4c0d6
+ /etc/rc.local 6f8bfdaf36d3ec4aa9be6e96fa61d32b
+ /etc/sysupgrade.conf f91aef484370cefee501d64b5725c1d2
+ /etc/config/qos_policer ed42b28b4a8b350706ba0f193bd9898d
+ /etc/config/intfGrp eef88da3a1328ba73604599bf22dcf61
+ /etc/config/qos_service 963ee93cf748fb5f4c93693c3c50dcb7
+ /etc/config/tr069 703182d49aad6e5cb286b86d278023f1
+ /etc/config/wps5G 1b8d80c5b3c9e7439f9da74de88db4c9
+ /etc/config/wps 1b8d80c5b3c9e7439f9da74de88db4c9
+ /etc/config/dlna 5e3a0752a1f1723fb8492ff472c7365f
+ /etc/config/system 01c23711f8dbe64df7dd426a027464a6
+ /etc/config/qos 1e6406a3e66b4ba5056b1eb19b56bdd3
+ /etc/config/syslogd 9cb908e2961ffbec767914416f2ee707
+ /etc/config/firewall a7e90b2894fe4059eeb085a71023ab17
+ /etc/config/samba 64b9990ced9e12650eaa588f07f2e14e
+ /etc/config/wireless 6fb32046d053408774f1b59731d3a3d3
+ /etc/config/ucitrack 6730256975a64b70ee416d2c572feff0
+ /etc/config/account cd19edc562f6d4af38798d923e5d31f6
+ /etc/config/port_status 9bd6a796e6acf9b2035cb7dae1ce9620
+ /etc/config/wireless5G_macfilter 27d85aa33e5f36691922b3b5cbb72a6f
+ /etc/config/dropbear 20e81657a309a08adb191fca963c36ab
+ /etc/config/network 5775d980532dbe2366025d5484df99c3
+ /etc/config/wireless_macfilter 27d85aa33e5f36691922b3b5cbb72a6f
+ /etc/config/wifi_schedule 4b5c838ff26cb95de8acc767f100043c
+ /etc/config/qos_classify 872290c25121d788e5de001d675e430d
+ /etc/config/wifi_schedule5G 4b5c838ff26cb95de8acc767f100043c
+ /etc/config/time 41f948db6841af9f450b7686fedc90f6
+Installed-Time: 1474560279
+
+Package: kmod-lib-crc16
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kmod-ebtables-watchers
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ebtables
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: macchanger
+Version: 1.5.0-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: luci-web
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-http, luci-sys, luci-nixio, luci-uci, luci-sgi-cgi, luci-lmo
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/luci 3398c8a7ea6934002abca47db84892c9
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: fcgi
+Version: 2.4.0-1
+Depends: libc, libpthread
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: netifd
+Version: 2012-12-17.1-HEAD
+Depends: libc, libuci, libnl-tiny, libubus, ubus, ubusd, jshn
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: 6in4
+Version: 12-1
+Depends: libc, kmod-ipv6, kmod-sit
+Provides:
+Status: install user installed
+Architecture: all
+Installed-Time: 1474560278
+
+Package: uboot-envtools
+Version: 2012.04.01-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-usb-ohci
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: dnsmasq
+Version: 2.67-1
+Depends: libc, swmp
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/dhcp 1160bb4c909aa242d2730f8215182474
+ /etc/dnsmasq.conf 8d708d0b86b18be8db600cfa7d302ab5
+Installed-Time: 1474560280
+
+Package: procd
+Version: 2012-12-20-HEAD
+Depends: libc, ubusd, ubus
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: resolveip
+Version: 2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+Auto-Installed: yes
+
+Package: usbutils
+Version: 003-1
+Depends: libc, libusb-1.0, zlib, librt, libpthread
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: mtd-utils-nandwrite
+Version: 20090227-1.1
+Depends: libc, mtd-utils, zlib, liblzo, libuuid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: luci-sgi-cgi
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: libblkid
+Version: 2.21.2-1
+Depends: libc, libuuid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: tr143
+Version: 0.1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: iptables-mod-nat-extra
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-nat-extra
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: ubusd
+Version: 2012-12-15-bb856ad8a9a1e786494d01e34bbfe2b4d2134021
+Depends: libc, libubox
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: luci-i18n-italian
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: luci-i18n-spanish
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: iptables-mod-ipsec
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-ipsec
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: libgpg-error
+Version: 1.7-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: iptables-mod-ipset
+Version: 1.4.10-4
+Depends: libc, iptables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-fast-classifier
+Version: 3.3.8+g-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-shortcut-fe
+Provides: fast-classifier
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ipt-condition
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: qca-hostapd-cli
+Version: 10.2.4-1
+Depends: libc, qca-hostap
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-pptp
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ppp, kmod-gre, kmod-pppox
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ipt-delude
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-compat-xtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: cpulimit-ng
+Version: 1.2-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+
+Package: block-mount
+Version: 0.2.0-10
+Depends: libc, blkid, swap-utils
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/fstab 3ecb7964010421fcdb950de110748345
+Installed-Time: 1474560279
+
+Package: kmod-ipt-nathelper-rtsp
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-conntrack-extra
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-fs-vfat
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nls-base
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: iptables-mod-iprange
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-iprange
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-usb2
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: miniupnpd
+Version: 1.6.20110730-4
+Depends: libc, iptables, libip4tc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/upnpd fb7f2b11dd9863d865d02f27ffdf6c6c
+Installed-Time: 1474560284
+
+Package: kmod-ipt-compat-xtables
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: luci-http
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: libxml2
+Version: 2.7.8-1
+Depends: libc, libpthread, zlib
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: zlibMapping
+Version: 1
+Depends: libc, swmp, libuci
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560286
+
+Package: kmod-ipt-chaos
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-compat-xtables, kmod-ipt-delude, kmod-ipt-tarpit
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: kmod-ipt-conntrack-extra
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libevent2
+Version: 2.0.19-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: tc
+Version: 3.3.0-1
+Depends: libc, kmod-sched-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: libuci
+Version: 2012-11-09.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: liblua
+Version: 5.1.4-7
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: libip4tc
+Version: 1.4.10-4
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: luci-i18n-german
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-ip6tables
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipv6
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: mtd-utils
+Version: 20090227-1.1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: libcyassl
+Version: 1.6.5-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: luci-admin-expert
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-admin-core, luci-ipkg
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: ztr69
+Version: 1
+Depends: libc, clinkc-zy, swmp
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560286
+
+Package: kmod-ipt-extra
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: iptables-mod-ipopt
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-ipopt
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: uci
+Version: 2012-11-09.1-1
+Depends: libc, libuci
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: lua
+Version: 5.1.4-7
+Depends: libc, liblua
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: kmod-fs-ext3
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-fs-mbcache
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-fs-ext4
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-lib-crc16
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ebtables-ipv4
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ebtables
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: mtd-utils-mkfs.jffs2
+Version: 20090227-1.1
+Depends: libc, mtd-utils, zlib, liblzo, libuuid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-ebtables-ipv6
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ebtables
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: luci-ssl
+Version: 0.9+svn6252-1
+Depends: libc, uhttpd, uhttpd-mod-tls, px5g
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: updatedd-mod-regfish
+Version: 2.6-7
+Depends: libc, updatedd
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: dropbear
+Version: 0.53.1-5
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/dropbear/dropbear_rsa_host_key d41d8cd98f00b204e9800998ecf8427e
+ /etc/dropbear/dropbear_dss_host_key d41d8cd98f00b204e9800998ecf8427e
+ /etc/config/dropbear 4ff9c827d4f95ca5082a5520c03e1419
+Installed-Time: 1474560281
+
+Package: kmod-ledtrig-timer
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: logrotate
+Version: 3.8.1-1
+Depends: libc, libpopt
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/logrotate.conf 96693c1724c8dd1284910d8d9d1a8851
+Installed-Time: 1474560284
+
+Package: libnetfilter-conntrack
+Version: 0.9.1-1
+Depends: libc, libnfnetlink, kmod-nf-conntrack-netlink
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: iptables-mod-condition
+Version: 1.42-1
+Depends: libc, iptables, kmod-ipt-condition
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: curl
+Version: 7.29.0-1
+Depends: libc, libcurl
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+
+Package: kmod-nls-utf8
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nls-base
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-crypto-aes
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-nls-cp437
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nls-base
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: mtd
+Version: 13
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: p0f
+Version: 3.06b-1
+Depends: libc, libpcap, p0f-db
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-crypto-core
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kmod-ipt-tee
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: luci-theme-base
+Version: 0.9+svn6252-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-ipt-hashlimit
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: luci-admin-core
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-web, luci-cbi, luci-i18n-english
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: iptables-mod-ipp2p
+Version: 1.42-1
+Depends: libc, iptables, kmod-ipt-ipp2p
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-sched
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-sched-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: ebtables-utils
+Version: 2.0.10-4-1
+Depends: libc, kmod-ebtables, ebtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: luci-i18n-chinese_traditional
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: luci-core
+Version: 0.9+svn6252-1
+Depends: libc, lua, luci-nixio
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: libgcc
+Version: 4.6-linaro-1
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: libip6tc
+Version: 1.4.10-4
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libuuid
+Version: 2.21.2-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: ppp
+Version: 2.4.5-9
+Depends: libc, kmod-ppp
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/ppp/chap-secrets e29cbe6021f13bd9b14d780a80f188ab
+ /etc/ppp/filter 16b01d9201be60c9d1f16dd98f449484
+ /etc/ppp/ip-down b37ca20692774bef443910d1c4041af5
+ /etc/ppp/ip-up 141e4bc260b1d733fac7e6e4ee9d2233
+ /etc/ppp/ipv6-down 9d6a2b922be456be92153c1f37e2e71c
+ /etc/ppp/ipv6-up 2f7b4095b60b966af5129caaf26f5f92
+ /etc/ppp/options 97db069ba7ef9baa9495e15c60bc0adf
+Installed-Time: 1474560285
+
+Package: libubox
+Version: 2012-12-18-4d0a00c82c77a9395c992841237e2c06c4606a5e
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: RA_status
+Version: 0.2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+
+Package: kmod-leds-gpio
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: libusb-1.0
+Version: 1.0.9-1
+Depends: libc, libpthread, librt
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-gpio-button-hotplug
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: snmpd
+Version: 5.4.2.1-5
+Depends: libc, libnetsnmp
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/default/snmpd 5f2dc66258ba06b7590a6aea030d5093
+ /etc/config/snmpd 21ac72d2491dbe6fa64022084ba8087d
+Installed-Time: 1474560285
+
+Package: RA_dhcp6c
+Version: 0.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+
+Package: liblzo
+Version: 2.04-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: ppp-mod-pptp
+Version: 2.4.5-9
+Depends: libc, kmod-pptp, kmod-mppe, resolveip
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: libjson
+Version: 0.9-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: librt
+Version: 0.9.33.2-1
+Depends: libpthread
+Provides:
+Status: install hold installed
+Essential: yes
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: iptables-mod-hashlimit
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-hashlimit
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: swap-utils
+Version: 2.21.2-1
+Depends: libc, libblkid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: uclibcxx
+Version: 0.2.2-3
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libblobmsg-json
+Version: 2012-12-18-4d0a00c82c77a9395c992841237e2c06c4606a5e
+Depends: libc, libjson, libubox
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: libnl-bf
+Version: g7d47666eb3c414feb8901970d35b96461214c2bf-3
+Depends: libc, libpthread
+Provides: libnl
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: mtd-utils-mtd-debug
+Version: 20090227-1.1
+Depends: libc, mtd-utils, zlib, liblzo, libuuid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-crypto-ecb
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-manager, kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: iptables
+Version: 1.4.10-4
+Depends: libc, kmod-ipt-core, libip4tc, libxtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: iptables-mod-filter
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-filter
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: hotplug2
+Version: 1.0-beta-4
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/hotplug2.rules d4975ba71cf50d3d3c286b0de0f0929a
+Installed-Time: 1474560281
+
+Package: kmod-ipt-nathelper
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-nat
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: luci-sys
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack-netlink
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nfnetlink, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-libphy
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-sit
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipv6, kmod-iptunnel4
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: libelf
+Version: 0.8.13-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: luci-uvl
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-sys, luci-uci, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: jshn
+Version: 2012-12-18-4d0a00c82c77a9395c992841237e2c06c4606a5e
+Depends: libc, libjson
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: p0f-db
+Version: 20160330114420-cloud-gbaabd85-generic-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: all
+Installed-Time: 1474560285
+
+Package: libncurses
+Version: 5.7-5
+Depends: libc, terminfo
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: kmod-ipt-core
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: libpcap
+Version: 1.1.1-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: kmod-ipv6
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: kmod-ledtrig-default-on
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ipt-ipsec
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kmod-ppp
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-lib-crc-ccitt
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: lzma-zy
+Version: 1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: uhttpd-mod-lua
+Version: 2012-10-30-HEAD
+Depends: libc, uhttpd, liblua
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: libnfnetlink
+Version: 1.0.0-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: kmod-wdt-ath79
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: kmod-ipt-porttrigger
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: igmpproxy
+Version: 0.1-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/igmpproxy.conf a543efcf9e7aa5c30a62c7a74d80b013
+Installed-Time: 1474560281
+
+Package: opkg-curl
+Version: 618-5
+Depends: libc, libcurl, zlib
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: libubus
+Version: 2012-12-15-bb856ad8a9a1e786494d01e34bbfe2b4d2134021
+Depends: libc, libubox
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: libiconv
+Version: 7
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: uhttpd
+Version: 2012-10-30-HEAD
+Depends: libc, libubox
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/uhttpd a740bd3bbb684bad16bb5b02e5f2c122
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: kmod-iptunnel4
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: iptables-mod-conntrack-extra
+Version: 1.4.10-4
+Depends: libc, iptables, kmod-ipt-conntrack-extra
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: luci-app-initmgr
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: libxtables
+Version: 1.4.10-4
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: ip6tables
+Version: 1.4.10-4
+Depends: libc, kmod-ip6tables, libip6tc, libxtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: zlib
+Version: 1.2.3-5
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+Auto-Installed: yes
+
+Package: sysdiagd
+Version: 1.0-beta-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: luci-i18n-french
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: kmod-qca-wifi-perf
+Version: 3.3.8+10.2.4-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), libgcc, libc, wireless-tools, librt
+Provides: kmod-qca-wifi
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: intfGrp_v6
+Version: 0.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: kmod-ipt-tarpit
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-compat-xtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: kmod-ipt-webstr
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-nls-iso8859-1
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nls-base
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ipt-ipopt
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: luci-lmo
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: kmod-ipt-nathelper-extra
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-nat, kmod-lib-textsearch
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-shortcut-fe
+Version: 3.3.8+g-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: luci
+Version: 0.9+svn6252-1
+Depends: libc, uhttpd, luci-app-initmgr
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: wide-dhcpv6-client
+Version: 20080615-6.3
+Depends: libc, kmod-ipv6
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/dhcp6c cb4c74f5252d90c59a83e87b0ba3ec0d
+Installed-Time: 1474560285
+
+Package: radvd
+Version: 1.8.3-1
+Depends: libc, kmod-ipv6
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/radvd 816cedd4936ae7b82bfebd1514baa805
+Installed-Time: 1474560281
+Auto-Installed: yes
+
+Package: kmod-usb-uhci
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-usb-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: iptables-mod-delude
+Version: 1.42-1
+Depends: libc, iptables, kmod-ipt-delude
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: luci-admin-easy
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-admin-core, luci-ipkg
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: samba3-nmbd
+Version: 3.0.37-5
+Depends: libc, samba3
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: firmware-upgrade
+Version: 0.2-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: firmware-info
+Version: 0.2-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560281
+
+Package: libexpat
+Version: 2.0.1-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: kmod-ipt-ipp2p
+Version: 3.3.8+1.42-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-compat-xtables
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kernel
+Version: 3.3.8-1-22f31bf31501ba323aba8f652a80005b
+Depends: libc
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560278
+Auto-Installed: yes
+
+Package: libnl-tiny
+Version: 0.1-3
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+Auto-Installed: yes
+
+Package: blkid
+Version: 2.21.2-1
+Depends: libc, libblkid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+
+Package: luci-cbi
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-web, luci-uvl, luci-uci
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: kmod-nfnetlink-queue
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-nfnetlink
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: mtd-utils-flash-eraseall
+Version: 20090227-1.1
+Depends: libc, mtd-utils, zlib, liblzo, libuuid
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+
+Package: libnetsnmp
+Version: 5.4.2.1-5
+Depends: libc, libelf
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: px5g
+Version: 1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: luci-ipkg
+Version: 0.9+svn6252-1
+Depends: libc, luci-core
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: kmod-ifb
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-mppe
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ppp, kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-sha1, kmod-crypto-ecb
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: 6rd
+Version: 2-1
+Depends: libc, kmod-ipv6, kmod-sit
+Provides:
+Status: install user installed
+Architecture: all
+Installed-Time: 1474560278
+
+Package: kmod-nls-base
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: lldpd
+Version: 0.6.1-1
+Depends: libc, libevent2
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/lldpd 868f730931a92d9fbe19e5ba28574933
+Installed-Time: 1474560284
+
+Package: luci-i18n-english
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: ckCgHdr
+Version: 1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560279
+
+Package: libpopt
+Version: 1.7-5
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: uhttpd-mod-tls
+Version: 2012-10-30-HEAD
+Depends: libc, uhttpd, libcyassl
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560284
+Auto-Installed: yes
+
+Package: swmp
+Version: 1
+Depends: libc, libjson
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+Auto-Installed: yes
+
+Package: wireless-tools
+Version: 29-5
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: qca-wpa-cli
+Version: 10.2.4-1
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-crypto-arc4
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: wol
+Version: 0.7.1-2
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560286
+
+Package: kmod-crypto-sha1
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-crypto-hash, kmod-crypto-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: libopenssl
+Version: 1.0.1g-1
+Depends: libc, zlib
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560280
+Auto-Installed: yes
+
+Package: kmod-scsi-core
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: libdb47
+Version: 4.7.25.NC-6
+Depends: libc, libxml2
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+
+Package: updatedd
+Version: 2.6-7
+Depends: libc
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Conffiles:
+ /etc/config/updatedd 2b6d0430064b6fb910236ca8e2c5b339
+Installed-Time: 1474560285
+Auto-Installed: yes
+
+Package: 6to4
+Version: 11-1
+Depends: libc, kmod-ipv6, kmod-sit
+Provides:
+Status: install user installed
+Architecture: all
+Installed-Time: 1474560278
+
+Package: ppp-mod-pppoe
+Version: 2.4.5-9
+Depends: libc, kmod-pppoe
+Provides:
+Status: install user installed
+Architecture: ar71xx
+Installed-Time: 1474560285
+
+Package: kmod-sched-core
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560283
+Auto-Installed: yes
+
+Package: kmod-ipt-nat
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-conntrack
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+
+Package: kmod-ledtrig-netdev
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+
+Package: kmod-ipt-iprange
+Version: 3.3.8-1
+Depends: kernel (= 3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Provides:
+Status: install hold installed
+Architecture: ar71xx
+Installed-Time: 1474560282
+Auto-Installed: yes
+

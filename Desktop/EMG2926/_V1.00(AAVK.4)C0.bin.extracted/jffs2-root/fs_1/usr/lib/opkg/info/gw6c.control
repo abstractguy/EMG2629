@@ -1,0 +1,11 @@
+Package: gw6c
+Version: 5.1-1
+Depends: libc, libpthread, ip, kmod-tun, kmod-ipv6, uclibcxx, radvd
+Source: feeds/packages/ipv6/gw6c
+SourceFile: gw6c-5.1.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: ipv6
+Architecture: ar71xx
+Installed-Size: 59320
+Description:  Client to configure an IPv6 tunnel to
+ Hexago/freenet6/go6.net's migration broker.

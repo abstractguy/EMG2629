@@ -1,0 +1,9 @@
+Package: kmod-shortcut-fe
+Version: 3.3.8+g-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b)
+Source: package/private/qualcomm/shortcut-fe/shortcut-fe
+SourceFile: shortcut-fe-g.tar.gz
+Section: kernel
+Architecture: ar71xx
+Installed-Size: 11009
+Description:  Kernel driver for SFE

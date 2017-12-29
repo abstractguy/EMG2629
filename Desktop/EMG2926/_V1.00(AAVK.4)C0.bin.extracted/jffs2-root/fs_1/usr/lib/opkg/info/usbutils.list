@@ -1,0 +1,3 @@
+/usr/sbin/update-usbids.sh
+/usr/share/usb.ids.gz
+/usr/bin/lsusb

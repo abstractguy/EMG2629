@@ -1,0 +1,11 @@
+Package: libiconv
+Version: 7
+Depends: libc
+Source: package/libs/libiconv
+License: FREE
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 167
+Description:  Tiny drop-in replacement for the GNU Character set conversion library

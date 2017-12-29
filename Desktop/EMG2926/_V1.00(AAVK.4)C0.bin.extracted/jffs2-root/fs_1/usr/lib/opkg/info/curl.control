@@ -1,0 +1,10 @@
+Package: curl
+Version: 7.29.0-1
+Depends: libc, libcurl
+Source: feeds/packages/libs/curl
+SourceFile: curl-7.29.0.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 42656
+Description:  A client-side URL transfer utility

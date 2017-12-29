@@ -1,0 +1,250 @@
+<%#
+LuCI - Lua Configuration Interface
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008 Jo-Philipp Wich <xm@leipzig.freifunk.net>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+$Id: header.htm 4891 2009-06-22 10:23:21Z jow $
+
+-%>
+<%
+require("luci.http").prepare_content("text/html")
+local uci = require("luci.model.uci").cursor()
+local i18n = require("luci.i18n")
+local lang = uci:get("system","main","language") 
+i18n.load("admin-core",lang)
+i18n.setlanguage(lang)
+-%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"  />
+<title>.::Welcome to the Web-Based Configurator::.</title>
+<link href="<%=media%>/css/expert.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=media%>/js/baseJS.js" ></script>
+</head>
+<body  >
+<%   
+   local luaDDNSProvider = {
+      [ "dyndns" ]     = "www.DynDNS.org",
+      [ "noip" ]       = "www.No-ip.com", 
+      [ "eurodyndns" ] = "www.EuroDynDNS.com",
+      [ "myzyxel" ]    = "MYZYXEL.IN.TH",
+      [ "regfish" ]    = "www.Regfish.com"
+   }
+   
+   local luaDDNSInfo = {}
+   
+   for name, url in pairs(luaDDNSProvider) do
+      local info = {}
+      
+      uci:foreach( "updatedd", "updatedd", function( section )
+         if name == section.service then
+            info.host = section.host
+            info.user = section.username
+            info.passwd = section.password
+            info.update = section.update
+         end
+      end )
+      
+      info.url = url
+      luaDDNSInfo[ name ] = info
+   end
+%>
+
+<script type="text/javascript">
+
+function JSDDNSItem( name, url, update, host, user, passwd )
+{
+   this.name = name;
+   this.url = url;
+   this.host = host;
+   this.user = user;
+   this.passwd = passwd;
+   this.update = ( update == "" || update == "0" ) ? false : true;
+}
+
+var jsDDNSInfo = [
+   <%
+      for name, info in pairs(luaDDNSInfo) do
+         %> new JSDDNSItem( "<%= name %>", "<%= info.url %>", "<%= info.update %>", "<%= info.host %>", "<%= info.user %>", "<%= info.passwd %>" ), <%
+      end
+   %>
+];
+
+function refreshPage( selectValue )
+{
+   //<![CDATA[
+   for( var i = 0; i < jsDDNSInfo.length; i++ )
+   {
+      if ( jsDDNSInfo[i].name == selectValue )
+      {
+         var radio = document.getElementsByName( "DDNSUpdate" );
+         
+         radio[0].checked = jsDDNSInfo[i].update;
+         radio[1].checked = !jsDDNSInfo[i].update;
+         document.getElementsByName( "DDNSHost" )[0].value = jsDDNSInfo[i].host;
+         document.getElementsByName( "DDNSUser" )[0].value = jsDDNSInfo[i].user;
+         document.getElementsByName( "DDNSPasswd" )[0].value = jsDDNSInfo[i].passwd;
+      }
+   }
+   //]]>
+}
+
+function checkInjection(str)
+{
+	var len = str.length;      
+	for (var i=0; i<str.length; i++) {
+		if ( str.charAt(i) == '`' || str.charAt(i) == '-' ||
+			 str.charAt(i) == '<' || str.charAt(i) == '>'){
+				return false;
+		}else
+	        continue;
+	}
+	return true;	
+}  
+
+function init()
+{
+   document.getElementsByName( "DDNSProvider" )[0].selected = true;
+   refreshPage( jsDDNSInfo[0].name );
+}
+
+window.onload = init;
+
+function verifySubmitData()
+{
+
+   
+	if ( document.getElementsByName( "DDNSUpdate" )[0].checked )
+	{
+	  if(!(checkInjection(document.DDNSForm.DDNSHost.value)))
+	  {
+		alert("<%:Injection_alert%> ` - < > ");
+		return false;
+	  }
+	  if(!(checkInjection(document.DDNSForm.DDNSUser.value)))
+	  {
+		alert("<%:Injection_alert%> ` - < > ");
+		return false;
+	  }
+	  if(!(checkInjection(document.DDNSForm.DDNSPasswd.value)))
+	  {
+		alert("<%:Injection_alert%> ` - < > ");
+		return false;
+	  }
+
+	  var name;
+      name = "Host";
+      if ( document.getElementsByName( "DDNSHost" )[0].value != "" )
+      {
+         name = "Username";
+         if ( document.getElementsByName( "DDNSUser" )[0].value != "" )
+         {
+            name = "Password";
+            if ( document.getElementsByName( "DDNSPasswd" )[0].value != "" )
+            {
+               showWebMessage( 0 , '<%:Message%>' , '<%:Ready%>' );
+               return true;
+            }
+         }
+      }
+      
+      alert( "Field \"" + name + "\" cannot be empty while enable!" );
+      return false;
+   }
+   
+   showWebMessage( 0 , '<%:Message%>' , '<%:Ready%>' );
+   return true;
+}
+
+</script>
+<form name="DDNSForm" onsubmit="return verifySubmitData()">
+   <div id="tabs">
+      <ul>
+         <li class="hightline"><a title="<%:Dynamic_DNS%>"><span><%:Dynamic_DNS%></span></a></li>
+      </ul>
+      <br class="clearfloat" />
+   </div>
+   <div id="table">
+      <ul>
+         <li class="table_top"></li>
+         <li class="table_content">
+            <div class="data">
+               <ul>
+                  <div class="title"><%:Dynamic_DNS_Setup%></div>
+                  <div class="w_text">
+                     <ul>
+                        <li class="left_table"><%:Dynamic_DNS%>  :</li>
+                        <li class="right_table">
+                           <input name="DDNSUpdate" type="radio" value="enable" />
+                           <%:Enable%>
+                           <input name="DDNSUpdate" type="radio" value="disable" />
+                           <%:Disable%>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="w_text2">
+                     <ul>
+                        <li class="left_table"><%:Service_Provider%> : </li>
+                        <li class="right_table">
+                           <select name="DDNSProvider" size="1" onchange="refreshPage( this.form.DDNSProvider.value )">
+                           <%
+                              for name, info in pairs(luaDDNSProvider) do
+                                 %> <option value="<%= name %>"><%= info %></option><%
+                              end
+                           %>
+                           </select>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="w_text2">
+                     <ul>
+                        <li class="left_table"><%:Host_Name%>  :</li>
+                        <li class="right_table">
+                           <input name="DDNSHost" size="30" maxlength="63" type="text" value="" />
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="w_text2">
+                     <ul>
+                        <li class="left_table"><%:Username%>  :</li>
+                        <li class="right_table">
+                           <input name="DDNSUser" size="30" maxlength="63" type="text" value="" />
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="w_text2">
+                     <ul>
+                        <li class="left_table"><%:Password%>  :</li>
+                        <li class="right_table">
+                           <input name="DDNSPasswd" size="30" maxlength="63" type="password" value="" />
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="spaceair"></div>
+               </ul>
+            </div>
+         </li>
+         <li class="table_button">
+            <div class="button" align="center">
+               <input name="apply" value="<%:Apply%>" type="submit" />
+               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+               <input name="Cancel" value="<%:Cancel%>" type="reset" />
+            </div>
+         </li>
+      </ul>
+   </div>
+</form>
+</body>
+<script language="JavaScript">
+   showFullPath(' <%:Network%> > <%:Dynamic_DNS%>');
+   showWebMessage( 0 , '<%:Message%>' , '<%:Ready%>' );
+</script>
+</html>

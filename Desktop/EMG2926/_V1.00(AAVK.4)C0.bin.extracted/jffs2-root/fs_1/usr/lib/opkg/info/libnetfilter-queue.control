@@ -1,0 +1,11 @@
+Package: libnetfilter-queue
+Version: 1.0.0-1
+Depends: libc, libnfnetlink, kmod-nfnetlink-queue
+Source: feeds/packages/libs/libnetfilter-queue
+SourceFile: libnetfilter_queue-1.0.0.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 4009
+Description:  libnetfilter_queue is a userspace library providing an API to packets
+ that have been queued by the kernel packet filter.

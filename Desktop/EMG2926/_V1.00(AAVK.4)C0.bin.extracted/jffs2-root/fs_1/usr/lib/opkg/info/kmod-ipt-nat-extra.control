@@ -1,0 +1,13 @@
+Package: kmod-ipt-nat-extra
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-nat
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 1431
+Description:  Netfilter (IPv4) kernel modules for extra NAT targets
+ Includes:
+ - NETMAP
+ - REDIRECT

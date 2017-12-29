@@ -1,0 +1,12 @@
+Package: procd
+Version: 2012-12-20-HEAD
+Depends: libc, ubusd, ubus
+Source: package/procd
+SourceFile: procd-2012-12-20-d343dd9e9a64d4ae7d225ea29169e97fa8d116a1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: GPLv2
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 9460
+Description:  OpenWrt system process manager

@@ -1,0 +1,8 @@
+/usr/bin/uvl
+/usr/lib/lua/luci/uvl/errors.lua
+/lib/uci/schema/meta/schema
+/usr/lib/lua/luci/uvl/validation.lua
+/usr/lib/lua/luci/uvl.lua
+/usr/lib/lua/luci/uvl/datatypes.lua
+/usr/lib/lua/luci/uvl/dependencies.lua
+/usr/bin/uvlc

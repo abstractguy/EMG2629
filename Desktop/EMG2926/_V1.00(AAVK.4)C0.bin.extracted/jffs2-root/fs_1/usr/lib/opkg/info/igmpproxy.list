@@ -1,0 +1,6 @@
+/etc/init.d/igmpproxy
+/etc/hotplug.d/iface/25-igmpproxy
+/usr/sbin/igmpproxy
+/sbin/act_igmp
+/etc/config/igmpproxy
+/etc/igmpproxy.conf

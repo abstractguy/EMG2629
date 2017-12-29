@@ -1,0 +1,13 @@
+Package: p0f-db
+Version: 20160330114420-cloud-gbaabd85-generic-1
+Depends: libc
+Provides: 
+Source: qca/feeds/streamboost/p0f-db
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: all
+Installed-Size: 13847
+Description:  Database of fingerprints for p0f.

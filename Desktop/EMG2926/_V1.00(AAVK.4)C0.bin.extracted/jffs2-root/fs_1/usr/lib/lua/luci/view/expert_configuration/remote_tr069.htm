@@ -1,0 +1,246 @@
+<%#
+LuCI - Lua Configuration Interface
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008 Jo-Philipp Wich <xm@leipzig.freifunk.net>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+$Id: header.htm 4891 2009-06-22 10:23:21Z jow $
+
+-%>
+<%
+
+require("luci.http").prepare_content("text/html")
+local uci = require("luci.model.uci").cursor()
+local i18n = require("luci.i18n")
+local lang = uci:get("system","main","language") 
+i18n.load("admin-core",lang)
+i18n.setlanguage(lang)
+
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"  />
+<title>.::Welcome to the Web-Based Configurator::.</title>
+<link href="<%=media%>/css/expert.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=media%>/js/baseJS.js" ></script>
+<script language="JavaScript">
+function AdmFormCheck()
+{
+	if (document.RMGMTTr069Form.RstFile.value == "") {
+		alert("Please specify the file name.");
+		return false;
+	}
+	
+}
+
+function ValidURL() {
+
+  str=document.getElementsByName( "tr69cAcsURL" )[0].value ;
+  enable=document.getElementsByName( "tr69cInform" )[0].checked ;
+  if( str=="" && enable==false )
+	return true;
+  
+  var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  if(!regex .test(str)) {
+  
+    if(enable==false )
+		alert("Please enter the valid URL  or blank.");
+	else
+		alert("Please enter the valid URL.");
+    return false;
+  } else {
+    return true;
+  }
+}
+</script>
+</head>
+
+<body>
+<%
+	local tr69cInform = tonumber(uci:get("tr069", "main", "tr69cInform"));
+	local WANInterface = uci:get("tr069", "main", "tr69cInterface");
+	local tr69cInformSource = uci:get("tr069", "main", "tr69cInformSource");
+
+	local luaWAN = {}
+   	uci:foreach( "network", "interface", function( section )
+            if not ( nil == section.ifname or "loopback" == section[ '.name' ] ) then
+                local tmp = section
+         
+                tmp.id = section[ '.name' ]
+                if ( nil == string.find(tmp.id,"lan")) then
+                    table.insert( luaWAN, tmp )
+                end
+            end
+        end )
+	local URL = uci:get( "tr069", "main", "tr69cAcsURL" )
+	if not (URL == nil) then
+		URL = string.gsub(URL, " ", "") 
+		if not (string.sub(URL,0,4) == "http") then
+			URL = "http://"..URL
+		end 
+		local URL2 = uci:get( "tr069", "main", "tr69cAcsURL" )
+		if not (URL == URL2) then
+			luci.sys.exec("uci set tr069.main.tr69cAcsURL="..URL)
+			luci.sys.exec("uci commit tr069")
+		end 
+	end
+%>
+<% local sys_op_mode = uci:get("system","main","system_mode")%>
+<form method="post" name="RMGMTTr069Form" action="<%=controller%>/expert/configuration/management/remote/tr069" enctype="multipart/form-data">
+<div id="tabs">
+   <ul>
+<% if sys_op_mode == "1" then%>
+      <li><a href="<%=controller%>/expert/configuration/management/remote" title="<%:WWW%>" ><span><%:WWW%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/telnet" title="<%:Telnet%>"><span><%:Telnet%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/ssh" title="<%:SSH%>"><span><%:SSH%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/snmpsetting" title="SNMP"><span><%:SNMP%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/wol" title="<%:Wake_On_LAN%>"><span><%:Wake_On_LAN%></span></a></li>
+<% end %>
+      <li class="hightline"><a title="<%:TR069%>"><span><%:TR069%></span></a></li>
+   </ul>
+   <br class="clearfloat" />
+</div>
+<div id="table">
+   <ul>
+      <li class="table_top"></li>
+      <li class="table_content">
+         <div class="data">
+            <ul>
+            	<div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cInform%>   :</li>
+                     <li class="right_table">
+                        <input name="tr69cInform" value="1" type="radio" <% if 1 == tr69cInform then%>checked="checked"<% end %> />
+                           <%:enable%>&nbsp;&nbsp;&nbsp;
+                        <input name="tr69cInform" value="0" type="radio" <% if 0 == tr69cInform then%>checked="checked"<% end %> />
+                           <%:disable%>
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cInformInterval%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cInformInterval" size="20" maxlength="10" value="<%= uci:get( "tr069", "main", "tr69cInformInterval" ) %>"  type="text" />
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table">Inform Source : </li>
+                     <li class="right_table">
+					<select onchange="" size="1" name="tr69cInformSource" >
+						<option value="1" <% if tr69cInformSource == "1" then %>SELECTED<% end %>> SN </option>
+						<option value="2" <% if tr69cInformSource == "2" then %>SELECTED<% end %>> MAC </option>
+					</select>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cAcsURL%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cAcsURL" size="64" maxlength="256" value="<%=URL %>" type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cAcsUser%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cAcsUser" size="64" maxlength="256" value="<%= uci:get( "tr069", "main", "tr69cAcsUser" ) %>"  type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cAcsPwd%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cAcsPwd" size="64" maxlength="256" value="<%= uci:get( "tr069", "main", "tr69cAcsPwd" ) %>"  type="password" />
+                     </li>
+                  </ul>
+               </div>
+			   <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cConnReqPort%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cConnReqPort" size="64" maxlength="256" value="<%= uci:get( "tr069", "main", "tr69cConnReqPort" ) %>"  type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cConnReqUser%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cConnReqUser" size="64" maxlength="256" value="<%= uci:get( "tr069", "main", "tr69cConnReqUser" ) %>"  type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cConnReqPwd%> : </li>
+                     <li class="right_table">
+                        <input name="tr69cConnReqPwd" size="64" maxlength="256" value="<%= uci:get( "tr069", "main", "tr69cConnReqPwd" ) %>"  type="password" />
+                     </li>
+                  </ul>
+               </div>
+
+<% if sys_op_mode == "1" then%> 
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:tr69cInterface%> : </li>
+                     <li class="right_table">
+			<select name="tr69cInterface" id="srvIfIdx" size="1" value="<%= WANInterface %>" >
+		  		<% for i = 1, #luaWAN do 
+					if ( luaWAN[i].enable == "1") then 
+		 		 -%>
+		  		<option value="<%=luaWAN[i].id%>" <% if WANInterface == luaWAN[i].id then %>selected="selected"<% end %> ><%= string.upper(luaWAN[i].id)%></option>
+		  			<%end%>
+		  		<%end%>
+			</select>
+                     </li>
+                  </ul>
+               </div>
+<% end %>
+
+	       <div class="space"></div>
+		<div class="title"><%:Upload_Certificate%></div>
+		<div class="w_text"><%:file_path%> :
+            	<input name="RstFile"  size="20" maxlength="128" type="file" />
+            	<input name="Restore" value="<%:file_upload%>" type="submit" onClick="return AdmFormCheck()" />
+          	</div>
+               <div class="spaceair"></div>
+               <div class="spaceair"></div>
+            </ul>
+         </div>
+      </li>
+      <li class="table_button">
+         <div class="button" align="center">
+            <input name="apply" value="<%:Apply%>" type="submit" onClick="return ValidURL()" />
+               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <input name="Cancel" value="<%:Cancel%>" type="reset" onclick="init()"/>
+         </div>
+      </li>
+   </ul>
+</div>
+</form>
+
+</body>
+<script language="JavaScript">
+   showFullPath(' <%:Management%> > <%:Remote_MGMT%> > <%:TR069%>');
+   showWebMessage( 0, '<%:Message%>', '<%:Ready%>' );
+   err=<%=errmsg%>
+   if (err == 1) {
+   	alert("Invalid Certificate File");
+   }
+</script>
+</html>

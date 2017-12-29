@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org 
+
+START=98
+
+boot(){
+	### applying after WAN connection up ###
+	mkdir -p /etc/tr69
+        exit 0
+
+	##/sbin/act_ztr69
+}
+
+restart() {
+	/sbin/act_ztr69
+}

@@ -1,0 +1,9 @@
+Package: RA_status
+Version: 0.2
+Depends: libc
+Source: package/private/zyxel/RA_status
+Section: net
+Architecture: ar71xx
+Installed-Size: 3212
+Description:  Read RA M bit and invoke DHCPv6 option, 
+ Added by Michael Lee.

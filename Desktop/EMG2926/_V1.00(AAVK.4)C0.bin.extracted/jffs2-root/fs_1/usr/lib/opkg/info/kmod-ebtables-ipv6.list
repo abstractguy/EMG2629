@@ -1,0 +1,2 @@
+/etc/modules.d/49-ebtables-ipv6
+/lib/modules/3.3.8/ebt_ip6.ko

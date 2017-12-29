@@ -1,0 +1,8 @@
+Package: zlibMapping
+Version: 1
+Depends: libc, swmp, libuci
+Source: package/private/zyxel/zlibMapping
+Section: net
+Architecture: ar71xx
+Installed-Size: 16344
+Description:  ZyXEL Data-Model MAP

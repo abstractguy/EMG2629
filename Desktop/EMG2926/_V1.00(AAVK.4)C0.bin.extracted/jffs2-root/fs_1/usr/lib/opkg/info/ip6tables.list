@@ -1,0 +1,6 @@
+/usr/sbin/ip6tables-save
+/usr/sbin/ip6tables
+/usr/sbin/ip6tables-restore
+/usr/lib/iptables/libip6t_dst.so
+/usr/lib/iptables/libip6t_HL.so
+/usr/lib/iptables/libip6t_hl.so

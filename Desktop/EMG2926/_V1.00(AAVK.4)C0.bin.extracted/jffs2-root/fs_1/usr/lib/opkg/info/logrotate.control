@@ -1,0 +1,13 @@
+Package: logrotate
+Version: 3.8.1-1
+Depends: libc, libpopt
+Source: feeds/packages/utils/logrotate
+SourceFile: logrotate_3.8.1.orig.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: utils
+Architecture: ar71xx
+Installed-Size: 20009
+Description:  logrotate is designed to ease administration of systems that generate large
+ numbers of log files. It allows auto-matic rotation, compression, removal and
+ mailing of log files. Each log file may be handled daily, weekly, monthly or
+ when it grows too large.

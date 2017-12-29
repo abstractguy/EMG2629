@@ -1,0 +1,8 @@
+Package: cpulimit-ng
+Version: 1.2-1
+Depends: libc
+Source: package/cpulimit-ng-read-only
+Section: utils
+Architecture: ar71xx
+Installed-Size: 8166
+Description:  CPU Usage Limiter for Linux

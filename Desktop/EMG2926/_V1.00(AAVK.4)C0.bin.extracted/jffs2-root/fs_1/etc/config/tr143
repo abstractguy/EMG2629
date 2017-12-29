@@ -1,0 +1,7 @@
+config tr143 general
+	option enableGUI '0'
+	option port '80'
+	option uploadlength '2'
+	option thread '3'
+	option TransportDirection 'download'
+	option blockWAN '0'

@@ -1,0 +1,12 @@
+Package: qca-hostapd-cli
+Version: 10.2.4-1
+Depends: libc, qca-hostap
+Source: package/private/qualcomm/qca-hostap
+SourceFile: qca-hostap-10.2.4-tag-2.9.095.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ar71xx
+Installed-Size: 13975
+Description:  This package contains a command line utility to control the
+ IEEE 802.1x/WPA/EAP/RADIUS Authenticator.

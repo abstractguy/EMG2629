@@ -1,0 +1,13 @@
+Package: libjson
+Version: 0.9-2
+Depends: libc
+Source: package/libs/libjson-c
+SourceFile: json-c-0.9.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 9404
+Description:  This package contains a library for javascript object notation backends.

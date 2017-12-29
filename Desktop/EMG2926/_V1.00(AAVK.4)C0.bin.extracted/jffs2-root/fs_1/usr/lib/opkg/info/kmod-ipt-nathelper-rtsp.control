@@ -1,0 +1,10 @@
+Package: kmod-ipt-nathelper-rtsp
+Version: 3.3.8+1.42-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core, kmod-ipt-conntrack-extra
+Source: feeds/packages/net/xtables-addons
+SourceFile: xtables-addons-1.42.tar.xz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: kernel
+Architecture: ar71xx
+Installed-Size: 7459
+Description:  RTSP Conntrack and NAT netfilter module

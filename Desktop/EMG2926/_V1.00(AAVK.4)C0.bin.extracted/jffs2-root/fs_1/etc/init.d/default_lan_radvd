@@ -1,0 +1,83 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2007 OpenWrt.org
+. /etc/functions.sh
+include /lib/config
+
+START=60
+
+boot() {
+	exit 0
+	###### Skip the workaround
+#    local chkv6=$(uci get network.wan.ipv6)
+#    local chk6rd=$(uci get network.general.wan6rd_enable)
+#    local enable=0
+#    
+#    [ -n "$chkv6"  -a "$chkv6"  == 1 ] && enable=1
+#    [ -n "$chk6rd" -a "$chk6rd" == 1 ] && enable=1
+#
+#    [ "$enable" == 1 ] && {
+#        IsDHCPv6GivePD=$(uci get network.wan.dhcpv6pd)
+#        v6lanstatic=$(uci get network.general.v6lanstatic)
+#
+#        # NOTE:  "$IsDHCPv6GivePD"  may empty cause of  network.wan.dhcpv6pd  sometimes is not exist.
+#        [ "$IsDHCPv6GivePD" == "0" -o "$v6lanstatic" == "1" ] && {
+#            # Static mode on LAN
+#            j=0
+#
+#            while [ "$j" != 150 ]; do
+#
+#                for i in "br-lan" 1 2 3 4
+#                do	
+#                    if [ "$i" == "br-lan" ] ;then
+#                        vlanIFNAME=$i
+#                    else
+#                        vlanIFNAME=$(uci get network.wan$i.bind_LAN)
+#                    fi
+#
+#                    [ -n "$vlanIFNAME" ] && {  	
+#                        lan_prefix=$(ifconfig $vlanIFNAME | awk '/Global/{print $3}')
+#                    }
+#
+#                    [ -n "$lan_prefix" ] && break
+#                done
+#
+#                [ -n "$lan_prefix" ] && {
+#                    /etc/init.d/radvd restart &
+#                    break
+#                }
+#                j=$(($j+1))
+#                sleep 2
+#            done
+#        }
+#    } &
+
+}
+
+stop() { 
+	return 0	
+}
+
+start() {
+
+    ## radvd script would check the static mode on LAN.
+    /etc/init.d/radvd reload config ##Only reload radvd config.
+	
+    ## This shell script is IPv6 Only
+    #local chkv6=$(uci get network.wan.ipv6)
+    #local chk6rd=$(uci get network.general.wan6rd_enable)
+    #local enable=0
+    #
+    #[ -n "$chkv6"  -a "$chkv6"  == 1 ] && enable=1
+    #[ -n "$chk6rd" -a "$chk6rd" == 1 ] && enable=1
+    #
+    #[ "$enable" == 1 ] && {
+    #    config_load "default_lan_radvd"
+    #    
+    #    uci set dhcp6c.basic.default_write_prefix="1"
+    #    uci set dhcp6c.basic.intfGrp_write_prefix="0"
+    #    uci commit dhcp6c
+    #    
+    #    /etc/init.d/radvd restart .
+    #}
+
+}

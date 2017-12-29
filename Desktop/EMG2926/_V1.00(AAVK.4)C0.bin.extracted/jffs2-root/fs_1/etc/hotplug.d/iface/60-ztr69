@@ -1,0 +1,67 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+#!/bin/sh
+
+local WANName=$(uci get tr069.main.tr69cInterface)
+##For IP change
+checkZtr69() {
+	local ZTR69CK=$(ps |grep ztr69|grep -v grep |wc -l)
+	if [ $ZTR69CK -ge 1 ];then
+		local WANIF
+		##check multi-wan interface
+		proto=$(uci get network.$WANName.proto)
+		if [ "$proto" == "pppoe" ] || [ "$proto" == "pptp" ];then
+			WANIF="$proto"-$WANName
+		else
+			WANIF=$(uci get network.$WANName.ifname)
+		fi
+		## TR069 Support AP mode
+		local sys_mode=$(get_sys_mode)
+		[ "$sys_mode" == "2" ] && {
+			WANIF="br-lan"
+			proto=$(uci get network.lan.proto)
+		}
+
+		local WANIP=$(ifconfig $WANIF| grep 'inet addr:'| awk -F ":" '{print $2}'|awk '{print $1}')
+		local IPconnect=WANDevice.1.WANConnectionDevice.1.WANIPConnection.1
+		local PPPconnect=WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1
+		local MGMSer=ManagementServer
+
+		OldIf=$(be_ctltr98 $MGMSer get X_ZyXEL_RemoteIfName)
+		[ "$OldIf" != "$WANIF" ] && be_ctltr98 $MGMSer set X_ZyXEL_RemoteIfName $WANIF
+
+		if [ "$proto" == "pppoe" ] || [ "$proto" == "pptp" ];then
+			be_ctltr98 $PPPconnect set ExternalIPAddress "$WANIP"
+			be_ctltr98 $PPPconnect set X_ZyXEL_IfName $WANIF	
+		else
+			be_ctltr98 $IPconnect set ExternalIPAddress "$WANIP"
+			be_ctltr98 $IPconnect set X_ZyXEL_IfName $WANIF
+		fi
+	
+		killall -9 zstun
+		zstun &
+
+		exit 0
+	fi
+}
+
+defaultwan=$(uci get network.general.defaultWan)
+
+[ "$ACTION" = "ifup" -a "${INTERFACE:0:3}" = "$defaultwan" ] && {	
+	wanLinkUptime=$(cat /proc/uptime | awk -F "." '{print $1}')
+	echo $wanLinkUptime > /tmp/wanLinkUptime_TR069
+
+	if [ "$INTERFACE" == "$WANName" ];then
+		checkZtr69
+		/sbin/act_ztr69 
+	fi
+}
+
+## TR069 Support AP mode
+local sys_mode=$(get_sys_mode)
+if [ "$sys_mode" == "2" ];then
+	[ "$ACTION" = "ifup" -a "$INTERFACE" = "lan" ] && {
+		checkZtr69
+		/sbin/act_ztr69 
+	}
+fi

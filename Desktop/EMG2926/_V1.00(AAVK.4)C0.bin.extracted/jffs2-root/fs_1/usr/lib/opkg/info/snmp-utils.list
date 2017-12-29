@@ -1,0 +1,6 @@
+/usr/bin/snmpstatus
+/usr/bin/snmptrap
+/usr/bin/snmpset
+/usr/bin/snmpget
+/usr/bin/snmpwalk
+/usr/bin/snmptest

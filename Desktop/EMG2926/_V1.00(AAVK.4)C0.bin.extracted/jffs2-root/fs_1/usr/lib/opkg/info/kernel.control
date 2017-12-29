@@ -1,0 +1,10 @@
+Package: kernel
+Version: 3.3.8-1-22f31bf31501ba323aba8f652a80005b
+Depends: libc
+Source: package/kernel
+License: GPLv2
+Section: sys
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 104
+Description:  Virtual kernel package

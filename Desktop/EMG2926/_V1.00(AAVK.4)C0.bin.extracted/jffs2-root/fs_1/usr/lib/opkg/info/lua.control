@@ -1,0 +1,13 @@
+Package: lua
+Version: 5.1.4-7
+Depends: libc, liblua
+Source: package/lua
+SourceFile: lua-5.1.4.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: lang
+Architecture: ar71xx
+Installed-Size: 4728
+Description:  Lua is a powerful light-weight programming language designed for extending 
+ applications. Lua is also frequently used as a general-purpose, stand-alone 
+ language. Lua is free software.
+ This package contains the Lua language interpreter.

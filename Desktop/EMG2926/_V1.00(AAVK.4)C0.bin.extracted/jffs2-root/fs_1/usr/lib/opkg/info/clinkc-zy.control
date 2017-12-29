@@ -1,0 +1,8 @@
+Package: clinkc-zy
+Version: 1
+Depends: libc, expat, libopenssl
+Source: package/zy-public/libs/clinkc-zy
+Section: net
+Architecture: ar71xx
+Installed-Size: 69082
+Description:  ZyXEL Modify - support TR069

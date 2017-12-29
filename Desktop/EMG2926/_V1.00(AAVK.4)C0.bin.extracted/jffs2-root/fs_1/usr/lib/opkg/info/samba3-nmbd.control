@@ -1,0 +1,12 @@
+Package: samba3-nmbd
+Version: 3.0.37-5
+Depends: libc, samba3
+Source: feeds/packages/net/samba3
+SourceFile: samba-3.0.37.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 373666
+Description:  NetBIOS name server
+ 
+ Made small with patches taken from AVM GPL releases and freetz 

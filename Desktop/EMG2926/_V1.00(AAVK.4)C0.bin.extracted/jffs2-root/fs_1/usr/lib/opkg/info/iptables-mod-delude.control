@@ -1,0 +1,10 @@
+Package: iptables-mod-delude
+Version: 1.42-1
+Depends: libc, iptables, kmod-ipt-delude
+Source: feeds/packages/net/xtables-addons
+SourceFile: xtables-addons-1.42.tar.xz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Architecture: ar71xx
+Installed-Size: 1150
+Description:  DELUDE iptables extension

@@ -1,0 +1,11 @@
+Package: uhttpd-mod-tls
+Version: 2012-10-30-HEAD
+Depends: libc, uhttpd, libcyassl
+Source: package/network/services/uhttpd
+SourceFile: uhttpd-2012-10-30-e57bf6d8bfa465a50eea2c30269acdfe751a46fd.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ar71xx
+Installed-Size: 1958
+Description:  The TLS plugin adds HTTPS support to uHTTPd.

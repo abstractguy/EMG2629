@@ -1,0 +1,14 @@
+Package: libgpg-error
+Version: 1.7-1
+Depends: libc
+Source: feeds/packages/libs/libgpg-error
+SourceFile: libgpg-error-1.7.tar.bz2
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 5104
+Description:  An helper library for common error codes and descriptions.
+ This is a library that defines common error values for all GnuPG 
+ components. Among these are GPG, GPGSM, GPGME, GPG-Agent, libgcrypt, 
+ Libksba, DirMngr, Pinentry, SmartCard Daemon and possibly more in the 
+ future.

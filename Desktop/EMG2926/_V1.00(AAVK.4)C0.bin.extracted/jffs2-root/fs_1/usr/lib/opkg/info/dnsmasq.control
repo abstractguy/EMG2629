@@ -1,0 +1,12 @@
+Package: dnsmasq
+Version: 2.67-1
+Depends: libc, swmp
+Source: package/network/services/dnsmasq
+SourceFile: dnsmasq-2.67.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: GPLv2
+LicenseFiles: COPYING
+Section: net
+Architecture: ar71xx
+Installed-Size: 92748
+Description:  It is intended to provide coupled DNS and DHCP service to a LAN.

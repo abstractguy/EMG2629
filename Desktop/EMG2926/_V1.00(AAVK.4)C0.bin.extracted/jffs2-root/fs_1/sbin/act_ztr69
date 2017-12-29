@@ -1,0 +1,132 @@
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+
+ckZtr69Start=$(cat /tmp/Ckztr69S)
+[ "$ckZtr69Start" == "0" ] && exit 1
+
+#setup TR069 Inform Source   SN / MAC
+local tr69cInformSource=$(uci get tr069.main.tr69cInformSource)
+if [ "$tr69cInformSource" == "2" ];then
+	local SN=$(ifconfig eth0 | grep HWaddr |  awk -F' ' '{print $5}' | sed 's/://g')
+else
+	local SN=$(fw_printenv |grep serialnum|awk -F"=" '{print $2}')
+fi
+be_ctltr98 DeviceInfo set SerialNumber $SN
+
+echo 0 > /tmp/Ckztr69S
+##FOR set/get/all
+local MGMSer=ManagementServer
+local WANdev=WANDevice.1
+local WANCon=WANDevice.1.WANConnectionDevice.1
+local IPconnect=WANDevice.1.WANConnectionDevice.1.WANIPConnection.1
+local PPPconnect=WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1
+
+##FOR num
+local IPconnectNum=WANDevice.i.WANConnectionDevice.i.WANIPConnection.i
+local PPPconnectNum=WANDevice.i.WANConnectionDevice.i.WANPPPConnection.i
+
+##FOR add
+local IPconnectAdd=WANDevice.1.WANConnectionDevice.1.WANIPConnection.i
+local PPPconnectAdd=WANDevice.1.WANConnectionDevice.1.WANPPPConnection.i
+
+## stop ztr69 daemon first
+killall -9 ztr69
+killall -9 zstun
+/usr/sbin/iptables -F RMMG_TR069 2>/dev/null
+/usr/sbin/iptables -t nat -N prerouting_RMMG_TR069 2>/dev/null
+/usr/sbin/iptables -t nat -F prerouting_RMMG_TR069 2>/dev/null
+
+local WANName=$(uci get tr069.main.tr69cInterface)
+local WANIF
+##check multi-wan interface
+proto=$(uci get network.$WANName.proto)
+if [ "$proto" == "pppoe" ] || [ "$proto" == "pptp" ];then
+	WANIF="$proto"-$WANName
+else
+	WANIF=$(uci get network.$WANName.ifname)
+fi
+
+## TR069 Support AP mode
+local sys_mode=$(get_sys_mode)
+[ "$sys_mode" == "2" ] && {
+	WANIF="br-lan"
+	proto=$(uci get network.lan.proto)
+}
+local WANIP=$(ifconfig $WANIF| grep 'inet addr:'| awk -F ":" '{print $2}'|awk '{print $1}')
+tr69ACSURL=$(uci get tr069.main.tr69cAcsURL   | tr -d ' ')
+tr69Enable=$(uci get tr069.main.tr69cInform)
+tr69Interval=$(uci get tr069.main.tr69cInformInterval)
+tr69AcsUser=$(uci get tr069.main.tr69cAcsUser)
+tr69AcsPwd=$(uci get tr069.main.tr69cAcsPwd)
+tr69AConnReqPort=$(uci get tr069.main.tr69cConnReqPort)
+tr69AConnReqUser=$(uci get tr069.main.tr69cConnReqUser)
+tr69AConnReqPwd=$(uci get tr069.main.tr69cConnReqPwd)
+
+if [ "$tr69ACSURL" != "" ] ;then
+	if [ "${tr69ACSURL:0:4}" != "http" ] ;then
+		tr69ACSURL="http://$tr69ACSURL"
+		uci set tr069.main.tr69cAcsURL=$tr69ACSURL
+		uci commit tr069
+	fi
+fi
+
+local ckDefaultRoute=$(ip route show|grep default)
+
+[ "$tr69Enable" == "0" -o -z "$tr69ACSURL" -o -z "$WANIP" -o -z "$ckDefaultRoute" ] && {
+	rm /tmp/Ckztr69S
+	exit 1
+}
+
+##Because Multi-WAN doesn't support in this pahse, only for one wan configuration in tr98 dataModel.
+if [ "$proto" == "pppoe" ] || [ "$proto" == "pptp" ];then
+	local CKPPP=$(be_ctltr98 $PPPconnect get Enable)
+	[ -z "$CKPPP" ] && be_ctltr98 $PPPconnectAdd add
+	be_ctltr98 $PPPconnect set Enable true
+	be_ctltr98 $PPPconnect set ConnectionStatus Connected
+	be_ctltr98 $PPPconnect set ExternalIPAddress "$WANIP"
+	be_ctltr98 $PPPconnect set X_ZyXEL_IfName $WANIF	
+else
+	be_ctltr98 $IPconnect set Enable true
+	be_ctltr98 $IPconnect set ConnectionStatus Connected
+	be_ctltr98 $IPconnect set ExternalIPAddress "$WANIP"
+	be_ctltr98 $IPconnect set X_ZyXEL_IfName $WANIF
+fi
+
+##check tr098 ManagementServer
+
+be_ctltr98 $MGMSer set EnableCWMP true
+be_ctltr98 $MGMSer set URL "$tr69ACSURL"
+##it should be triggered in zcmd backend status-update
+#be_ctltr98 $MGMSer set ConnectionRequestURL "http://$WANIP:7676/abc/"
+be_ctltr98 $MGMSer set X_ZyXEL_RemoteIfName $WANIF
+[ -n "$tr69AcsUser" ] && be_ctltr98 $MGMSer set Username "$tr69AcsUser" || be_ctltr98 $MGMSer set Username ""
+[ -n "$tr69AcsPwd" ] && be_ctltr98 $MGMSer set Password "$tr69AcsPwd" || be_ctltr98 $MGMSer set Password ""
+[ -n "$tr69AConnReqPort" ] && be_ctltr98 $MGMSer set X_ZYXEL_ConnectionRequestPort "$tr69AConnReqPort" int32
+[ -n "$tr69AConnReqUser" ] && be_ctltr98 $MGMSer set ConnectionRequestUsername "$tr69AConnReqUser" || be_ctltr98 $MGMSer set ConnectionRequestUsername ""
+[ -n "$tr69AConnReqPwd" ] && be_ctltr98 $MGMSer set ConnectionRequestPassword "$tr69AConnReqPwd" || be_ctltr98 $MGMSer set ConnectionRequestPassword ""
+[ -n "$tr69Interval" ] && be_ctltr98 $MGMSer set PeriodicInformInterval $tr69Interval int32 || be_ctltr98 $MGMSer set PeriodicInformInterval 0 int32
+[ -n "$tr69Interval" ] && be_ctltr98 $MGMSer set PeriodicInformEnable true || be_ctltr98 $MGMSer set PeriodicInformEnable false
+##enable stun
+##default stun ip is ACS Server ip, default port is 3478.
+be_ctltr98 $MGMSer set STUNEnable true
+be_ctltr98 $MGMSer set STUNServerPort 3478 int32
+
+conReqURLPort=$(be_ctltr98 $MGMSer get X_ZYXEL_ConnectionRequestPort)
+conReqURLPortUDP=$(be_ctltr98 $MGMSer get X_ZYXEL_ConnectionRequestUDPPort)
+
+##enable iptables rule for addign wan ##
+iptables -I RMMG_TR069 -i $WANIF -p tcp --dport $conReqURLPort -j ACCEPT 2>/dev/null
+iptables -I RMMG_TR069 -i $WANIF -p udp --dport $conReqURLPortUDP -j ACCEPT 2>/dev/null
+iptables -t nat -I prerouting_RMMG_TR069 -i $WANIF -p tcp --dport $conReqURLPort -j ACCEPT 2>/dev/null
+iptables -t nat -I prerouting_RMMG_TR069 -i $WANIF -p udp --dport $conReqURLPortUDP -j ACCEPT 2>/dev/null
+
+sleep 1
+##enable ztr69
+ztr69 &
+
+##enable zstun
+[ -n "$tr69AConnReqUser" -a -n "$tr69AConnReqPwd" ] && {
+	zstun &
+}
+echo 1 > /tmp/Ckztr69S
+

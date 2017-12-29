@@ -1,0 +1,8 @@
+Package: ztr69
+Version: 1
+Depends: libc, clinkc-zy, swmp
+Source: package/private/zyxel/ztr69
+Section: net
+Architecture: ar71xx
+Installed-Size: 91005
+Description:  ZyXEL TR069 Agent

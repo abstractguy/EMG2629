@@ -1,0 +1,9 @@
+Package: intfGrp_v6
+Version: 0.1-1
+Depends: libc
+Source: package/private/zyxel/intfGrp_v6
+Section: net
+Architecture: ar71xx
+Installed-Size: 1033
+Description:  IntfGrp ipv6 
+ Added by Michael Lee.

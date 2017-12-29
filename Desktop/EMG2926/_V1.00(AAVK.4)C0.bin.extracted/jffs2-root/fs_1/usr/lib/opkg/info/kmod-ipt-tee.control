@@ -1,0 +1,10 @@
+Package: kmod-ipt-tee
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-22f31bf31501ba323aba8f652a80005b), kmod-ipt-core
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 2166
+Description:  Kernel modules for TEE

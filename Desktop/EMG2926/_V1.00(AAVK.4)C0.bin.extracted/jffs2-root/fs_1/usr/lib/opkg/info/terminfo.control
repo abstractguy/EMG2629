@@ -1,0 +1,12 @@
+Package: terminfo
+Version: 5.7-5
+Depends: libc
+Source: package/libs/ncurses
+SourceFile: ncurses-5.7.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+License: FREE
+LicenseFiles: README
+Section: libs
+Architecture: ar71xx
+Installed-Size: 5571
+Description:  Terminal Info Database (ncurses)

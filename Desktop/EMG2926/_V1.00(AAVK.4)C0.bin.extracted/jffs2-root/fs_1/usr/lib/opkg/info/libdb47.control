@@ -1,0 +1,11 @@
+Package: libdb47
+Version: 4.7.25.NC-6
+Depends: libc, libxml2
+Source: feeds/packages/libs/db47
+SourceFile: db-4.7.25.NC.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ar71xx
+Installed-Size: 299943
+Description:  Berkeley DB library (4.7).

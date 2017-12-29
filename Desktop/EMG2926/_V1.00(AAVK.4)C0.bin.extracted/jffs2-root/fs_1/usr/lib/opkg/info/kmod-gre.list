@@ -1,0 +1,3 @@
+/lib/modules/3.3.8/ip_gre.ko
+/etc/modules.d/39-gre
+/lib/modules/3.3.8/gre.ko

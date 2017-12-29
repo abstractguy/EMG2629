@@ -1,0 +1,9 @@
+/etc/config/proftpd
+/etc/proftpd.conf
+/usr/sbin/in.proftpd
+/usr/bin/ftpcount
+/usr/bin/ftpwho
+/usr/bin/ftptop
+/etc/init.d/proftpd
+/usr/sbin/proftpd
+/usr/sbin/ftpshut

@@ -1,0 +1,11 @@
+Package: miniupnpd
+Version: 1.6.20110730-4
+Depends: libc, iptables, libip4tc
+Source: feeds/packages/net/miniupnpd
+SourceFile: miniupnpd-1.6.20110730.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Maintainer: Daniel Dickinson <openwrt@cshore.neomailbox.net>
+Architecture: ar71xx
+Installed-Size: 34684
+Description:  Lightweight UPnP daemon

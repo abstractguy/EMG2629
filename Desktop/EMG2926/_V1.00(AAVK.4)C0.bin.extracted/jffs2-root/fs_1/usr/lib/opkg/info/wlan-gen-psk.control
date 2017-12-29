@@ -1,0 +1,10 @@
+Package: wlan-gen-psk
+Version: 0.1-1
+Depends: libc
+Source: package/private/zyxel/wlan-gen-psk
+SourceFile: wlan-gen-psk-0.1.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl/private
+Section: net
+Architecture: ar71xx
+Installed-Size: 4151
+Description:  WLAN tool about generating PSK

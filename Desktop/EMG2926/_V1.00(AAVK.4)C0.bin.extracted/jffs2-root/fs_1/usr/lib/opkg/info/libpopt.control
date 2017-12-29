@@ -1,0 +1,10 @@
+Package: libpopt
+Version: 1.7-5
+Depends: libc
+Source: package/libs/popt
+SourceFile: popt-1.7.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: libs
+Architecture: ar71xx
+Installed-Size: 13158
+Description:  A command line option parsing library

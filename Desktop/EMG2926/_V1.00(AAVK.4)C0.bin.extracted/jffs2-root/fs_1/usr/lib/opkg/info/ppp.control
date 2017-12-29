@@ -1,0 +1,11 @@
+Package: ppp
+Version: 2.4.5-9
+Depends: libc, kmod-ppp
+Source: package/network/services/ppp
+SourceFile: ppp-2.4.5.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: net
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: ar71xx
+Installed-Size: 107431
+Description:  This package contains the PPP (Point-to-Point Protocol) daemon.

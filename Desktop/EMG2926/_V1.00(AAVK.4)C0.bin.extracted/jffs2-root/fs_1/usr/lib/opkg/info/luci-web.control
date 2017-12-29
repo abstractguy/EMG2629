@@ -1,0 +1,10 @@
+Package: luci-web
+Version: 0.9+svn6252-1
+Depends: libc, luci-core, luci-http, luci-sys, luci-nixio, luci-uci, luci-sgi-cgi, luci-lmo
+Source: feeds/luci/luci
+SourceFile: EMG2926AAVK-luci-0.9+svn6252
+Section: luci
+Maintainer: Steven Barth <steven-at-midlink-dot-org>
+Architecture: ar71xx
+Installed-Size: 16905
+Description:  MVC Webframework
